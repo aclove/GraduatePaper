@@ -31,6 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="DisJointSet.cpp" />
+		<Unit filename="DisJointSet.h" />
+		<Unit filename="EdgeInfo.cpp" />
+		<Unit filename="EdgeInfo.h" />
+		<Unit filename="OptimalMST.cpp" />
+		<Unit filename="OptimalMST.h" />
+		<Unit filename="UGraph.cpp" />
+		<Unit filename="UGraph.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

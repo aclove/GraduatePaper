@@ -17,12 +17,6 @@ public:
 
     int SetFather(int father, int child);
 
-    void UpdateDJS();
-
-    void SetChoseEdge(int edgeID, bool value);
-
-    vector<bool>& GetChoseEdgeArray();
-
 };
 
 #endif // DISJOINTSET

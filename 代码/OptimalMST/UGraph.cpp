@@ -34,7 +34,7 @@ int UGraph::GetEdgeNum(){
 }
 
 EdgeInfo* UGraph::GetEdgeInfo(int edgeID){
-    assert(edgeID >= 0 && edgeID < graphM);
+    if(edgeID < 0 || edgeID >= graphM) return NULL;
     return &edgeInfo[edgeID];
 }
 

@@ -1,0 +1,118 @@
+\def\CTeXPreproc{Created by ctex v0.2.14, don't edit!}%-----------------------------------------------------------------------------------------
+\documentclass[CJK,GBK,12pt,oneside,a4paper]{paper}                                         % 文档样式的选择,默认情况:chapter章标题(三号黑体),
+                                                                                            % section节标题(三号黑体),subsection小节标题(小四号黑体),
+                                                                                            % subsubsection子节标题(小四号黑体),正文字体(小四号宋体).
+
+%---宏包----------------------------------------------------------------------------------
+\usepackage{amsmath}                                                                        % 排版数学公式
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amssymb}                                                                        % 定义AMS的数学符号命令
+\usepackage{mathrsfs}                                                                       % 数学RSFS书写字体
+\usepackage{bm}                                                                             % 数学黑体
+\usepackage{multirow}
+\usepackage{graphicx}                                                                       % 支持插图,图形宏包graphics的扩展宏包
+\usepackage{color,xcolor}                                                                   % 支持彩色
+%\usepackage[CJKbookmarks=true,hyperindex=true,
+%            bookmarksnumbered=false, bookmarksopen=true,
+%            colorlinks=true,linkcolor=black,anchorcolor=black,
+%            citecolor=black]{hyperref}                                                      % 超级链接
+\usepackage[paperwidth=210mm,paperheight=297mm,top=24mm,bottom=39mm,
+                                               left=30mm,right=30mm]{geometry}              % 简单灵活的页面设置界面
+\usepackage{ccmap}                                                                          % 生成字符可复制的PDF文件
+\usepackage{amscd}
+
+\usepackage[retainorgcmds]{ctextemp_IEEEtrantools}
+
+
+%---目录格式修改--------------------------------------------------------------------------
+%目录中默认格式是：章标题与页码之间是没有点线的，如果需要加上点线，在导言区加上以下代码
+%\makeatletter
+%\def\@bfdottedtocline#1#2#3#4#5{%
+% \ifnum #1>\c@tocdepth \else
+%   \vskip \z@ \@plus.2\p@
+%   {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+%    \parindent #2\relax\@afterindenttrue
+%    \interlinepenalty\@M
+%    \leavevmode \bfseries
+%    \@tempdima #3\relax
+%    \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+%    {#4}\normalfont\nobreak
+%    \leaders\hbox{$\m@th
+%       \mkern \@dotsep mu\hbox{.}\mkern \@dotsep
+%       mu$}\hfill
+%    \nobreak
+%    \hb@xt@\@pnumwidth{\hfil\normalfont \normalcolor #5}%
+%    \par}%
+% \fi}
+%\renewcommand*\l@chapter{\@bfdottedtocline{0}{0em}{1.5em}}
+%\makeatother
+
+\graphicspath{{figures/}}                                                                   % 图片放置的根路径
+
+\newlength\figwidth
+\setlength\figwidth{0.4\textwidth}
+
+\newlength\picwidthw
+\setlength\picwidthw{0.35\textwidth}
+
+\newlength\imagewidth
+\setlength\imagewidth{0.65\columnwidth}
+\newlength\imagewidthh
+\setlength\imagewidthh{1.0\columnwidth}                                                                                         
+
+
+%---定理, 定义 等环境的设置---------------------------------------------------------------
+
+\newtheorem{definition}{\hspace{2em}定义}[section]
+\newtheorem{proposition}{\hspace{2em}命题}[section]
+\newtheorem{property}{\hspace{2em}性质}[section]
+\newtheorem{lemma}{\hspace{2em}引理}[section]
+\newtheorem{theorem}{\hspace{2em}定理}[section]
+\newtheorem{corollary}{\hspace{2em}推论}[section]
+\newtheorem{algorithm}{\hspace{2em}算法}[section]
+\newtheorem{example}{\hspace{2em}例}
+\newtheorem{remark}{\hspace{2em}注}
+
+
+%---自定义命令和环境-----------------------------------------------------------------------
+
+\renewcommand\sectionformat{\flushleft \heiti \zihao{4}}                                     % 设置节标题黑体,四号,左对齐.
+
+\newcommand{\mb}{\boldsymbol}                                                                % 为数学黑体命令定义一个简单的书写命令
+
+\newcommand{\enorm}[1]  {\left\vert \! \left\vert \! \left\vert
+                      \,#1\, \right\vert \! \right\vert \! \right\vert}                      % 能量范数
+
+\newcommand{\enorml}[1] {| \! | \! | \, #1 \, | \! | \! |}                                   % 能量范数
+
+\newcommand{\dd}{\,\mathrm{d}}                                                               % 微分算子
+
+\newcommand{\ep}{\hfill\rule{0.15cm}{0.35cm}\vskip 0.3cm}                                    % 证明环境
+\newenvironment{proof}[1][证~明]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\ep\end{trivlist}}
+
+                                                                                       
+%====文档的开始============================================================================
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%
+%封面
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/cover}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%目录
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/catalog}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%绪论
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%主要章节
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/body}
+
+\end{document}

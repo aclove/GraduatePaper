@@ -1,0 +1,38 @@
+
+%=======第二章=================================
+\newpage
+
+\chapter{不确定图中最优生成树和次优生成树求解算法}
+\vskip 0.3cm
+
+\section{问题定义}
+\label{sec:chap2definition}
+
+\begin{definition}[不确定图]
+\label{def:2.1}
+不确定图是一个四元组$\mathcal{G} = (V, E, W, P)$，
+其中$V$是顶点集，$E$是边集，
+$W = \{w(e) \,|\,  e \in E, w(e) \in  \mathbb{N}^{+} \}$是边的权重集，
+$P = \{p(e) \,|\,  e \in E, p(e) \in (0, 1]\}$是边存在可能性的集合。
+\end{definition}
+
+从定义~\ref{def:2.1}可知，
+不确定图$\mathcal{G} = (V, E, W, P)$每条边以$p(e)$的概率存在，
+在可能世界模型下，每条边有存在和不存在两种可能性，所以可以派生出$2^{|E|}$个蕴含图。
+如果确定图$G=(V_G,E_G,W_G)$是$\mathcal{G}$的一个蕴含图，
+则显然有${V_G}=V$，${E_G}\subseteq E$和 ${W_G}=\{w(e)|e\in {E_G}\}\subseteq W$。
+将蕴含图$G$和不确定图$\mathcal{G}$之间的关系表示为$\mathcal{G}\Rightarrow G$。
+本文沿用文献[5, 8, 12]对不确定图模型所做的假设，即不确定图中不同边的概率分布相互独立。
+基于以上假设，蕴含图$G$存在的概率为
+\begin{equation}
+\label{eq:2.1}
+\Pr(\mathcal{G} \Rightarrow G) = \prod_{e\in E_G}p(e) \prod_{e\in E\setminus E_G}(1-p(e)).
+\end{equation}
+
+
+记不确定图$\mathcal{G}$的所有蕴含图的集合为$Imp(\mathcal{G})$。
+由文献[6]可知$\mathcal{G}$中所有蕴含图出现的概率和为1，即
+\begin{equation}
+\label{eq:2.2}
+\sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}=1.
+\end{equation}

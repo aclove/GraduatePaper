@@ -16,13 +16,18 @@ $W = \{w(e) \,|\,  e \in E, w(e) \in  \mathbb{N}^{+} \}$是边的权重集，
 $P = \{p(e) \,|\,  e \in E, p(e) \in (0, 1]\}$是边存在可能性的集合。
 \end{definition}
 
+\begin{definition}[蕴含图]
+\label{def:2.2}
+令不确定图$\mathcal{G} = (V, E, W, P)$，
+若确定图$G=(V_G,E_G,W_G)$是$\mathcal{G}$的一个蕴含图，
+则必然满足${V_G}=V$，${E_G}\subseteq E$和${W_G}=\{w(e)|e\in {E_G}\}\subseteq W$。
+\end{definition}
+
 从定义~\ref{def:2.1}可知，
 不确定图$\mathcal{G} = (V, E, W, P)$每条边以$p(e)$的概率存在，
 在可能世界模型下，每条边有存在和不存在两种可能性，所以可以派生出$2^{|E|}$个蕴含图。
-如果确定图$G=(V_G,E_G,W_G)$是$\mathcal{G}$的一个蕴含图，
-则显然有${V_G}=V$，${E_G}\subseteq E$和 ${W_G}=\{w(e)|e\in {E_G}\}\subseteq W$。
-将蕴含图$G$和不确定图$\mathcal{G}$之间的关系表示为$\mathcal{G}\Rightarrow G$。
 本文沿用文献[5, 8, 12]对不确定图模型所做的假设，即不确定图中不同边的概率分布相互独立。
+将蕴含图$G$和不确定图$\mathcal{G}$之间的关系表示为$\mathcal{G}\Rightarrow G$。
 基于以上假设，蕴含图$G$存在的概率为
 \begin{equation}
 \label{eq:2.1}
@@ -37,7 +42,13 @@ $P = \{p(e) \,|\,  e \in E, p(e) \in (0, 1]\}$是边存在可能性的集合。
 \sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}=1.
 \end{equation}
 
-
+\begin{example}
+图~\ref{fig1:subfiga}为一个不确定图$\mathcal{G}_{1}$，
+边上的两个数字分别代表权值和概率，
+由于该不确定图有五条可能出现的边，因此该不确定图有$2^5$个蕴含图。
+图\ref{fig1:subfigb}为不确定图$\mathcal{G}_{1}$的一个蕴含图，
+显然该蕴含图存在的概率为$p(e_2)\times p(e_3)\times p(e_4)\times p(e_5)\times (1-p(e_1)))= 0.03528$。
+\end{example}
 
 \begin{figure}[htb]
 \centering
@@ -65,3 +76,58 @@ $P = \{p(e) \,|\,  e \in E, p(e) \in (0, 1]\}$是边存在可能性的集合。
 (b) an implicated graph from $\mathcal{G}_{1}$;
 (c) main implicated graph from $\mathcal{G}_{1}$.}
 \end{figure}
+
+在传统图论中，图的最小生成树被定义为边的权值和最小的生成树，
+一个图可能存在多个最小生成树，这些最小生成树具有相同的权值和。
+然而在不确定图中，每条边都有一个存在的概率，
+这样会导致每一颗最小生成树都只有一定的概率存在，
+我们可以通过一个稳定性来区分最小生成树的好坏，即
+\begin{equation}
+\label{eq:2.3}
+R_T = \prod_{e\in E_T}p(e)
+\end{equation}
+
+公式~\ref{eq:2.3}的含义与公式~\ref{eq:2.1}有所不同，
+公式~\ref{eq:2.3}的另一层含义可以解释为所有包含最小生成树$T$的蕴含图存在的概率和。
+
+为了区分每颗生成树，我们需要给每个生成树进行编号，
+假设所有生成树的边都按照编号从小到大进行排序，我们称字典序较小的生成树具有更小的编号。
+
+\begin{definition}[最小生成树]
+\label{def:2.3}
+设确定图$G=(V,E,W)$，若生成树$T$满足$\forall T'(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
+则称$T$为确定图$G$的最小生成树，记编号最小的最小生成树为$T_M^G$，
+其边集为$E_M^G$，边的权值和为$W_M^G$。
+\end{definition}
+
+\begin{definition}[最小乘积生成树]
+\label{def:2.4}
+设确定图$G=(V,E,W)$，若生成树$T$满足$\forall T'(\prod_{e \in E_T} W(e) \le \prod_{e' \in E_{T'}}W(e'))$，
+则称$T$为确定图$G$的最小乘积生成树，记编号最小的最小乘积生成树为$T_P^G$，
+其边集为$E_P^G$，边的权值和为$W_P^G$。
+\end{definition}
+
+\begin{definition}[最优生成树]
+\label{def:2.5}
+设$Imp(\mathcal{T})$为不确定图$\mathcal{G}$中所有最小生成树的集合，
+若最小生成树$T$满足$\forall T' \in Imp(\mathcal{T})(R_{T'} \le R_T)$，
+则称$T$为不确定图$\mathcal{G}$的最优生成树。记编号最小的最优生成树为$T_O^{\mathcal{G}}$，
+其边集为$E_O^{\mathcal{G}}$，边的权值和为$W_O^{\mathcal{G}}$。
+\end{definition}
+
+显然，最优生成树不是唯一的，我们也可以将最优生成树看作不确定图中的最小生成树中的最小乘积生成树。
+
+
+\section{最优生成树算法}
+\label{sec:chap2algorithm}
+
+\begin{theorem}
+设确定图$G=(V,E,W)$和$G'=(V,E,W')$，其满足$W'(e) = \log_2 (W(e))$，
+则$W_P^G = 2^{W_M^{G'}}$。
+\end{theorem}
+
+\begin{proof}
+设$T$为$G$和$G'$的任意一颗生成树，其边集为$E_T$，则$\sum_{e \in E_T}W'(e)$ = $\log_2 \prod_{e \in E_T}W(e)$，
+显然生成树$T$在$G'$中的边权和与在$G$中边权的乘积成正比，
+当$T$为$G'$的最小生成树时，则有$W_P^G = 2^{W_M^{G'}}$。
+\end{proof}

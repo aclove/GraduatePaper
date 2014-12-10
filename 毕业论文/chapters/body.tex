@@ -122,12 +122,42 @@ R_T = \prod_{e\in E_T}p(e)
 \label{sec:chap2algorithm}
 
 \begin{theorem}
+\label{trm:2.2.1}
 设确定图$G=(V,E,W)$和$G'=(V,E,W')$，其满足$W'(e) = \log_2 (W(e))$，
 则$W_P^G = 2^{W_M^{G'}}$。
 \end{theorem}
 
 \begin{proof}
-设$T$为$G$和$G'$的任意一颗生成树，其边集为$E_T$，则$\sum_{e \in E_T}W'(e)$ = $\log_2 \prod_{e \in E_T}W(e)$，
+设$T$为$G$和$G'$的任意一颗生成树，其边集为$E_T$，则$\sum_{e \in E_T}W'(e) = \log_2 \prod_{e \in E_T}W(e)$，
 显然生成树$T$在$G'$中的边权和与在$G$中边权的乘积成正比，
-当$T$为$G'$的最小生成树时，则有$W_P^G = 2^{W_M^{G'}}$。
+当$T$为$G'$的最小生成树时，则有$W_M^{G'} = \log_2 W_P^G$，即$W_P^G = 2^{W_M^{G'}}$。
 \end{proof}
+
+由定理~\ref{trm:2.2.1}可知，要想求得最小乘积生成树，
+可以将图中所有边的权值进行$\log$变换，然后求新图的最小生成树。
+我们将在后面使用该思路去求解不确定图的最优生成树。
+
+我们知道使用$kruskal$算法求解最小生成树的第一步是需要对图中所有的边进行排序，
+那么我们也假设不确定图$\mathcal{G} = (V,E,W,P)$中所有的边按照如下优先级进行排序：
+
+\begin{itemize}
+ \item 将权值较小的边排在前面；
+ \item 对于权值相同的边，则将概率较大的边排在前面；
+ \item 若两者的值都相同，则顺序任意。
+\end{itemize}
+
+这样，相同权值的边将会在排列在一起，我们假设不同权值的边的数目为$m$，
+那么我们可以将边集$E$按照边权值的不同划分为$E'_1, E'_2, \cdots, E'_m$，
+在同一个集合内的边具有相同的权值，
+且满足$e_1 \in E'_i \land e_2 \in E'_j \land i < j \Rightarrow  W(e_1) < W(e_2)$。
+假设$G_1$为$E'_1$在不确定图$\mathcal{G}$中的导出子图，
+即边集为$E_{G_1}=E'_1$，顶点集$V_{G_1}$为边集$E_{G_1}$关联的顶点，
+定义$\mathcal{G}_1 = \mathcal{G}$，那么我们按照下列步棸生成图$G_2, \cdots, G_m$：
+
+\begin{itemize}
+ \item 将不确定图$\mathcal{G}_{i-1}$按照顶点集$V_{G_{i-1}}$进行缩点，得到不确定图$\mathcal{G}_i$;
+ \item $G_i$则为$E'_i$在不确定图$\mathcal{G}_i$中的导出子图，即边集$E_i$为集合$E'_i$与$\mathcal{G}_i$的边集的交集。
+\end{itemize}
+
+\begin{example}
+\end{example}

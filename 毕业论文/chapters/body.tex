@@ -71,7 +71,7 @@ $P = \{p(e) \,|\,  e \in E, p(e) \in (0, 1]\}$是边存在可能性的集合。
     \centering
     \includegraphics[width=\figwidth]{Fig1c}
     \end{minipage}}
-\caption{Example:
+\caption{Example 1:
 (a) uncertain graph $\mathcal{G}_{1}$;
 (b) an implicated graph from $\mathcal{G}_{1}$;
 (c) main implicated graph from $\mathcal{G}_{1}$.}
@@ -95,16 +95,19 @@ R_T = \prod_{e\in E_T}p(e)
 
 \begin{definition}[最小生成树]
 \label{def:2.3}
-设确定图$G=(V,E,W)$，若生成树$T$满足$\forall T'(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
-则称$T$为确定图$G$的最小生成树，记编号最小的最小生成树为$T_M^G$，
-其边集为$E_M^G$，边的权值和为$W_M^G$。
+设不确定图$\mathcal{G}=(V,E,W,P)$，若生成树$T$满足$\forall T'(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
+则称$T$为不确定图$\mathcal{G}$的最小生成树，记编号最小的最小生成树为$T_M^{\mathcal{G}}$，
+其边集为$E_M^{\mathcal{G}}$，边的权值和为$W_M^{\mathcal{G}}$。
 \end{definition}
 
-\begin{definition}[最小乘积生成树]
+\begin{definition}[最小最大乘积生成树]
 \label{def:2.4}
-设确定图$G=(V,E,W)$，若生成树$T$满足$\forall T'(\prod_{e \in E_T} W(e) \le \prod_{e' \in E_{T'}}W(e'))$，
-则称$T$为确定图$G$的最小乘积生成树，记编号最小的最小乘积生成树为$T_P^G$，
-其边集为$E_P^G$，边的权值和为$W_P^G$。
+设不确定图$\mathcal{G}=(V,E,W,P)$，若生成树$T$满足$\forall T'(\prod_{e \in E_T} P(e) \le \prod_{e' \in E_{T'}}P(e'))$，
+则称$T$为不确定图$\mathcal{G}$的最小乘积生成树，记编号最小的最小乘积生成树为$T_{PL}^{\mathcal{G}}$，
+其边集为$E_{PL}^{\mathcal{G}}$，边的权值和为$W_{PL}^{\mathcal{G}}$。
+若生成树$T$满足$\forall T'(\prod_{e \in E_T} P(e) \ge \prod_{e' \in E_{T'}}P(e'))$，
+则称$T$为不确定图$\mathcal{G}$的最大乘积生成树，记编号最小的最大乘积生成树为$T_{PB}^{\mathcal{G}}$，
+其边集为$E_{PB}^{\mathcal{G}}$，边的权值和为$W_{PB}^{\mathcal{G}}$
 \end{definition}
 
 \begin{definition}[最优生成树]
@@ -123,41 +126,109 @@ R_T = \prod_{e\in E_T}p(e)
 
 \begin{theorem}
 \label{trm:2.2.1}
-设确定图$G=(V,E,W)$和$G'=(V,E,W')$，其满足$W'(e) = \log_2 (W(e))$，
-则$W_P^G = 2^{W_M^{G'}}$。
+设不确定图$\mathcal{G}=(V,E,W,P)$和$\mathcal{G}'=(V,E,W,P')$，其满足$P'(e) = \log_2 (P(e))$，
+则$W_{PL}^{\mathcal{G}} = 2^{W_M^{\mathcal{G}'}}$。
 \end{theorem}
 
 \begin{proof}
-设$T$为$G$和$G'$的任意一颗生成树，其边集为$E_T$，则$\sum_{e \in E_T}W'(e) = \log_2 \prod_{e \in E_T}W(e)$，
-显然生成树$T$在$G'$中的边权和与在$G$中边权的乘积成正比，
-当$T$为$G'$的最小生成树时，则有$W_M^{G'} = \log_2 W_P^G$，即$W_P^G = 2^{W_M^{G'}}$。
+设$T$为$\mathcal{G}$和$\mathcal{G}'$的任意一颗生成树，其边集为$E_T$，则$\sum_{e \in E_T}P'(e) = \log_2 \prod_{e \in E_T}P(e)$，
+显然生成树$T$在$\mathcal{G}'$中的边权和与在$\mathcal{G}$中边权的乘积成正比，
+当$T$为$\mathcal{G}'$的最小生成树时，则有$W_M^{\mathcal{G}'} = \log_2 W_{PL}^{\mathcal{G}}$，即$W_{PL}^{\mathcal{G}} = 2^{W_M^{\mathcal{G}'}}$。
 \end{proof}
 
 由定理~\ref{trm:2.2.1}可知，要想求得最小乘积生成树，
 可以将图中所有边的权值进行$\log$变换，然后求新图的最小生成树。
 我们将在后面使用该思路去求解不确定图的最优生成树。
 
+\begin{corollary}
+\label{cor:2.2.1}
+若生成树的边权和是最小的，那么其边权的乘积也是最小的；
+若生成树的边权和是最大的，那么其边权的乘积也是最大的。
+\end{corollary}
+
 我们知道使用$kruskal$算法求解最小生成树的第一步是需要对图中所有的边进行排序，
-那么我们也假设不确定图$\mathcal{G} = (V,E,W,P)$中所有的边按照如下优先级进行排序：
+因此我们可以假设不确定图$\mathcal{G} = (V,E,W,P)$中所有的边按照如下优先级进行排序：
 
 \begin{itemize}
  \item 将权值较小的边排在前面；
  \item 对于权值相同的边，则将概率较大的边排在前面；
- \item 若两者的值都相同，则顺序任意。
+ \item 若两者的值都相同，则将编号较小的边排在前面。
 \end{itemize}
 
-这样，相同权值的边将会在排列在一起，我们假设不同权值的边的数目为$m$，
-那么我们可以将边集$E$按照边权值的不同划分为$E'_1, E'_2, \cdots, E'_m$，
-在同一个集合内的边具有相同的权值，
-且满足$e_1 \in E'_i \land e_2 \in E'_j \land i < j \Rightarrow  W(e_1) < W(e_2)$。
-假设$G_1$为$E'_1$在不确定图$\mathcal{G}$中的导出子图，
-即边集为$E_{G_1}=E'_1$，顶点集$V_{G_1}$为边集$E_{G_1}$关联的顶点，
-定义$\mathcal{G}_1 = \mathcal{G}$，那么我们按照下列步棸生成图$G_2, \cdots, G_m$：
+最优生成树的算法步棸如下：
+\begin{enumerate}
+ \item 新建一个不确定图$\mathcal{G}'$，其顶点集和不确定图$\mathcal{G}$相同，边集为空；
+ \item 假设不确定图$\mathcal{G}$的边集已经按照上面的规则进行排序；
+ \item 依次处理排序好的边，若这条边连接的两个顶点不在同一个连通分量中，则将这条边加入不确定图$\mathcal{G}'$;
+ \item 重复第3步，直到不确定图$\mathcal{G}'$中所有的顶点都连通。
+\end{enumerate}
+这样，我们得到的不确定图$\mathcal{G}'$既是不确定图$\mathcal{G}$的最优生成树,
+显然该最优生成树也是编号最小的最优生成树$T_O^{\mathcal{G}}$。
 
-\begin{itemize}
- \item 将不确定图$\mathcal{G}_{i-1}$按照顶点集$V_{G_{i-1}}$进行缩点，得到不确定图$\mathcal{G}_i$;
- \item $G_i$则为$E'_i$在不确定图$\mathcal{G}_i$中的导出子图，即边集$E_i$为集合$E'_i$与$\mathcal{G}_i$的边集的交集。
-\end{itemize}
+\begin{theorem}
+\label{trm:2.2.2}
+最优生成树算法是正确的。
+\end{theorem}
+
+\begin{proof}
+显然最优生成树的算法步棸和$Kruskal$算法的步棸一致，因此我们得到的生成树一定是最小生成树。
+根据最小生成树的性质，所有的最小生成树应该具有相同的边权值序列（假设边权值按照从小到大排序），
+并且相同权值的边构成的连通分量应该相同，
+根据最优生成树算法可知，由相同权值的边构成的连通分量，其边的概率和是最大的。
+再由推论~\ref{cor:2.2.1}可知，这些边的概率乘积也是最大的，
+因此最优生成树算法是正确的。
+\end{proof}
 
 \begin{example}
+图~\ref{fig2}为一个不确定图$\mathcal{G}$，按照优先级排序后的边集为$\{e_1,e_2, \cdots, e_{10}\}$。
+图~\ref{fig3}为图~\ref{fig2}中不确定图的最优生成树求解过程，
+红色标记的边为加入生成树中的边，
+在图(2)到图(3)时，由于顶点$D$和顶点$E$已经在同一个连通分量，
+所以边$e_3$没有加入生成树的边集中，图(6)中红线构成的生成树则为最优生成树。
+从图中可知，$W_O^{\mathcal{G}} = 13$且$R_{T_O^{\mathcal{G}}} = 0.14112$。
 \end{example}
+
+\begin{figure}[htb]
+\label{fig2}
+\centering
+\includegraphics[width=\imagewidth]{Fig2}
+\caption{Example 2: 不确定图$\mathcal{G}$。}
+\end{figure}
+
+\begin{figure}[htb]
+\label{fig3}
+\centering
+\includegraphics[width=\textwidth]{Fig3}
+\caption{Example 2: 最优生成树计算过程。}
+\end{figure}
+
+\begin{algorithm}[!htb]
+\caption{最优生成树算法}
+\label{alg:ost}
+\begin{algorithmic}[1]
+\Statex
+\setcounter{ALG@line}{0}
+\Algphase{\textbf{模块1：}并查集}
+\Statex \textbf{initialization} $RT_i\gets i(i = 1,2,\cdots,|V|)$
+\Procedure{GetRoot}{$u$}
+\If {$u=RT_u$}
+    \Return $u$
+\Else {} \Return ($RT_u\gets \Call{GetRoot}{RT_u}$)
+\EndIf
+\EndProcedure
+\setcounter{ALG@line}{0}
+\Algphase{\textbf{模块2： }最优生成树算法}
+\Procedure{OST}{$\mathcal{G}$} \Comment $\mathcal{G}=(V,E,W,P)$
+\State $E_O^{\mathcal{G}} = \emptyset$
+\For {\textbf{each} $e_i \gets (u,v) \in E$}
+    \State $ru \gets \Call{GetRoot}{u}$
+    \State $rv \gets \Call{GetRoot}{v}$
+    \If{$ru \ne rv$}
+        \State $RT_{ru} = rv$
+        \State $E_O^{\mathcal{G}} = E_O^{\mathcal{G}} \cup \{e_i\}$
+    \EndIf
+\EndFor
+\State \textbf{return} $E_O^{\mathcal{G}}$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm} 

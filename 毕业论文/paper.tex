@@ -13,6 +13,8 @@
 \usepackage{multirow}
 \usepackage{graphics, graphicx, subfigure}                                                  % 支持插图,图形宏包graphics的扩展宏包
 \usepackage{color,xcolor}                                                                   % 支持彩色
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 %\usepackage[CJKbookmarks=true,hyperindex=true,
 %            bookmarksnumbered=false, bookmarksopen=true,
 %            colorlinks=true,linkcolor=black,anchorcolor=black,
@@ -58,8 +60,6 @@
 
 \newlength\imagewidth
 \setlength\imagewidth{0.65\columnwidth}
-\newlength\imagewidthh
-\setlength\imagewidthh{1.0\columnwidth}
 
 
 %---定理, 定义 等环境的设置---------------------------------------------------------------
@@ -70,7 +70,7 @@
 \newtheorem{lemma}{\hspace{2em}引理}[section]
 \newtheorem{theorem}{\hspace{2em}定理}[section]
 \newtheorem{corollary}{\hspace{2em}推论}[section]
-\newtheorem{algorithm}{\hspace{2em}算法}[section]
+%\newtheorem{algorithm}{\hspace{2em}算法}[section]
 \newtheorem{example}{\hspace{2em}例}
 \newtheorem{remark}{\hspace{2em}注}
 
@@ -92,7 +92,13 @@
 \newenvironment{proof}[1][证~明]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\ep\end{trivlist}}
 
-                                                                                       
+\newcommand\Algphase[1]{%
+\vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}\rule{\columnwidth}{0.4pt}%
+\Statex\hspace*{-\algorithmicindent}#1%
+\vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}\rule{\columnwidth}{0.4pt}%
+}
+
+
 %====文档的开始============================================================================
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -115,4 +121,4 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \input{chapters/body}
 
-\end{document}
+\end{document} 

@@ -14,6 +14,7 @@
 \usepackage{graphics, graphicx, subfigure}                                                  % 支持插图,图形宏包graphics的扩展宏包
 \usepackage{color,xcolor}                                                                   % 支持彩色
 \usepackage{algorithm}
+\usepackage{enumerate}
 \usepackage[noend]{algpseudocode}
 %\usepackage[CJKbookmarks=true,hyperindex=true,
 %            bookmarksnumbered=false, bookmarksopen=true,
@@ -25,6 +26,10 @@
 \usepackage{amscd}
 
 \usepackage[retainorgcmds]{ctextemp_IEEEtrantools}
+
+\usepackage[numbers,sort&compress]{natbib}                                                  %如果引用篇参考文献则自动使用破折号
+
+\usepackage{booktabs,array}      %用于表格
 
 
 %---目录格式修改--------------------------------------------------------------------------
@@ -73,6 +78,7 @@
 %\newtheorem{algorithm}{\hspace{2em}算法}[section]
 \newtheorem{example}{\hspace{2em}例}
 \newtheorem{remark}{\hspace{2em}注}
+\newtheorem{experiment}{\hspace{2em}实验}
 
 
 %---自定义命令和环境-----------------------------------------------------------------------
@@ -98,6 +104,8 @@
 \vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}\rule{\columnwidth}{0.4pt}%
 }
 
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}          %引用文献索引在右上方显示
+
 
 %====文档的开始============================================================================
 \begin{document}
@@ -105,6 +113,12 @@
 %封面
 %%%%%%%%%%%%%%%%%%%%%%
 \input{chapters/cover}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%目录
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/abstract}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %目录
@@ -119,6 +133,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 %主要章节
 %%%%%%%%%%%%%%%%%%%%%%
-\input{chapters/body}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/summary}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%参考文献
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/references}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%致谢
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/acknowledgement}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%附录
+%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/appendix}
 
 \end{document} 

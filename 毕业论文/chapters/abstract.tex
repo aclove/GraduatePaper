@@ -1,0 +1,54 @@
+%----摘要----------------------------------------------------------------------------------------
+
+\newpage
+\topskip10mm
+\pagestyle{plain}     % 页眉为空，页脚由居中的页码组成。这是默认的页面式样。
+\pagenumbering{Roman} % 设置页码格式为Roman，并把页计数器置为1。
+\chapter*{摘~~~~~~要}%\addcontentsline{toc}{chapter}{摘要}
+\addcontentsline{toc}{chapter}{摘要}
+\songti\zihao{-4}
+
+图论作为数学的一个分支，
+在计算机科学中也扮演着非常重要的角色。
+许多问题都可以通过抽象化之后转化为图论问题，
+然后通过计算机将对应的图论算法实现来得到问题的解。
+随着大数据时代的到来，
+图数据的规模也随之增大，
+因此图算法的效率对于解决图论问题至关重要。
+
+由于现实问题中可能会遇到很多的意外情况，
+如机器故障，信号传输的不稳定性等，
+最终导致实际数据存在不确定性。
+因此不确定图已经成为一个非常热门的研究领域。
+本文对不确定图中的最小生成树进行了研究，
+主要内容分为以下三个部分：
+\begin{enumerate}[(1)]
+\item 由于不确定图的边存在不确定性，
+所以传统的最小生成树定义已经不能完全适用于不确定图。
+因此提出了最优生成树的概念，
+它主要是在最小生成树定义的基础上增加了对概率的最优化定义。
+然后我们借助贪心的思想设计了不确定图中最优生成树求解算法。
+\item 由于最优生成树在不确定图中不一定完全稳定，
+所以我们又设计了Top-K最优生成树算法，
+并提出了基于并查集的优化算法和基于启发式搜索的优化算法。
+当$K$值较小时，基于启发式搜索的优化算法具有明显的优势。
+\item 在内容(2)的算法基础上，
+我们对最小生成树在不确定图中的可靠性进行了分析。
+\end{enumerate}
+
+最后，我们对不确定图中最优生成树的研究进行了相关的实验验证，
+实验结果表明，设计的算法的运行效率与理论分析基本一致，
+且能够完全正确的得到问题的解。
+
+\vskip 0.5cm
+\noindent {\heiti 关键词：}不确定图，蕴含图，最小生成树，最优生成树。
+
+\newpage
+\newpage
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\setlength{\baselineskip}{19pt plus2pt minus1pt} % 调整自然行距
+
+\vskip 0.2cm
+\noindent{\bf Key words:} uncertain graph, implicated graph, minimum spanning tree, optimized spanning tree.
+\setlength{\baselineskip}{20pt plus2pt minus1pt} % 调整自然行距

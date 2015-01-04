@@ -1,0 +1,265 @@
+
+%=======第四章=================================
+\newpage
+
+\chapter{不确定图中最小生成树的可靠性研究}
+\vskip 0.3cm
+
+\section{问题定义}
+
+\begin{definition}[可靠蕴含图]
+\label{def:4.1.1}
+设$G$为不确定图$\mathcal{G}=(V,E,W,P)$的任意蕴含图，
+$T^{G}_M$为图$G$的最小生成树，
+若满足$\sum_{e \in E_{T^{G}_M}}w(e) = W^{\mathcal{G}}_M$，
+则称$G$为不确定图$\mathcal{G}$的可靠蕴含图。
+\end{definition}
+
+\begin{definition}[不确定图中最小生成树的可靠性]
+\label{def:4.1.2}
+设不确定图$\mathcal{G}=(V,E,W,P)$，
+令$S=\{G|G \in Imp(\mathcal{G}) \land W^{G}_M = W^{\mathcal{G}}_M\}$为
+不确定图$\mathcal{G}$中所有可靠蕴含图的集合，
+则我们定义不确定图$\mathcal{G}$中最小生成树的可靠性为：
+\begin{equation}
+\nonumber
+r = \sum_{G \in R} \Pr(\mathcal{G} \Rightarrow G).
+\end{equation}
+\end{definition}
+
+\begin{example}
+\label{ex:6}
+表~\ref{tab4.1}的第一列显示了图~\ref{fig2.1:subfiga}中的不确定图的蕴含图边集，
+该不确定图一共有三颗最小生成树
+$($其边集分别为$\{e_1,e_2,e_4\}, \{e_2,e_3,e_4\}$和$\{e_2,e_4,e_5\})$，
+因此一共有$7$个可靠蕴含图$($表~\ref{tab4.1}的前$7$行对应的蕴含图$)$，
+由于非可靠蕴含图出现的概率和为$0.37378$，
+因此该不确定图的最小生成树的可靠性为$1-0.37378=0.62622$。
+\end{example}
+
+\begin{table}
+\centering
+\caption{图~\ref{fig2.1:subfiga}的可靠性评估表.}\label{tab4.1}
+\begin{tabular}{lll}
+\toprule
+蕴含图边集 &包含的最小生成树 &出现概率\\
+\midrule
+$\{e_1, e_2, e_3, e_4, e_5\}$ &$\{e_1, e_2, e_4\}$, $\{e_2, e_3, e_4\}$, $\{e_2, e_4, e_5\}$ &$0.31752$\\
+$\{e_1, e_2, e_3, e_4\}$ &$\{e_1, e_2, e_4\}, \{e_2, e_3, e_4\}$ &$0.13608$\\
+$\{e_1, e_2, e_4, e_5\}$ &$\{e_1, e_2, e_4\}, \{e_2, e_4, e_5\}$ &$0.07938$\\
+$\{e_2, e_3, e_4, e_5\}$ &$\{e_2, e_3, e_4\}, \{e_2, e_4, e_5\}$ &$0.03528$\\
+$\{e_1, e_2, e_4\}$ &$\{e_1, e_2, e_4\}$ &$0.03402$\\
+$\{e_2, e_3, e_4\}$ &$\{e_2, e_3, e_4\}$ &$0.01512$\\
+$\{e_2, e_4, e_5\}$ &$\{e_2, e_4, e_5\}$ &$0.00882$\\
+others &none &$0.37378$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{最小生成树的可靠性求解算法}
+
+\begin{theorem}
+\label{trm:4.2.1}
+设不确定图$\mathcal{G}=(V,E,W,P)$且不确定图
+$\mathcal{G'}=(V, E', W, P)$，
+其中$E' = E \setminus \{e\}$，
+则$\sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}=\sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}$.
+\end{theorem}
+
+\begin{proof}
+由公式~\ref{eq:2.1}可知
+\begin{equation}
+\nonumber
+\begin{split}
+\sum\limits_{G\in Imp(\mathcal{G}) \land e \in E}{Pr(\mathcal{G}\Rightarrow G)}
+&= \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E}{p(e) Pr(\mathcal{G'}\Rightarrow G \setminus e)}\\
+&= p(e) \sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}\\
+\end{split}
+\end{equation}
+同理
+\begin{equation}
+\nonumber
+\begin{split}
+\sum\limits_{G\in Imp(\mathcal{G}) \land e \notin E}{Pr(\mathcal{G}\Rightarrow G)}
+&= (1-p(e)) \sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}\\
+\end{split}
+\end{equation}
+
+因此
+\begin{equation}
+\nonumber
+\begin{split}
+\sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}
+&= \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E}{Pr(\mathcal{G}\Rightarrow G)} + \sum\limits_{G\in Imp(\mathcal{G}) \land e \notin E}{Pr(\mathcal{G}\Rightarrow G)}\\
+&= \sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}
+\end{split}
+\end{equation}
+\end{proof}
+
+\begin{lemma}
+\label{lm:4.2.1}
+设不确定图$\mathcal{G}=(V,E,W,P)$，
+则$\sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}=1$.
+\end{lemma}
+
+\begin{proof}
+设$E=\{e_1, e_2, \cdots, e_m\}$，且
+\begin{equation}
+\nonumber
+\begin{array}{*{35}{l}}
+   \mathcal{G}_0 = \mathcal{G}  \\
+   \mathcal{G}_1 = \mathcal{G}_0 \setminus \{e_1\} \\
+   \mathcal{G}_2 = \mathcal{G}_1 \setminus \{e_2\}  \\
+   ...... \\
+   \mathcal{G}_m = \mathcal{G}_{m-1} \setminus \{e_m\}
+\end{array}
+\end{equation}
+则由定理~\ref{trm:4.2.1}可知
+\begin{equation}
+\nonumber
+\sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}=
+\sum\limits_{G\in Imp(\mathcal{G}_1)}{Pr(\mathcal{G}_1\Rightarrow G)}=
+\cdots =
+\sum\limits_{G\in Imp(\mathcal{G}_m)}{Pr(\mathcal{G}_m\Rightarrow G)}
+\end{equation}
+由于不确定图$\mathcal{G}_m$的边集为空，
+所以$\sum\limits_{G\in Imp(\mathcal{G}_m)}{Pr(\mathcal{G}_m\Rightarrow G)}=1$。
+\end{proof}
+
+\begin{lemma}
+\label{lm:4.2.2}
+设不确定图$\mathcal{G}=(V,E,W,P)$，且$E_I, E_O \in E$，则
+\begin{equation}
+\nonumber
+\sum\limits_{G\in Imp(\mathcal{G}) \land E_I \subseteq E_G \land E_O \cap E_G= \emptyset}{Pr(\mathcal{G}\Rightarrow G)}
+=\prod_{e\in E_I}p(e) \prod_{e\in E_O}(1-p(e))
+\end{equation}
+\end{lemma}
+
+
+在引理~\ref{lm:3.2.1}中，
+我们知道可以通过边集划分的方法来获取最小生成树。
+同样的，这种划分也适用于不确定图中所有的蕴含图，
+也就是说，我们可以将图~\ref{fig3.2}看成是不确定图中所有蕴含图集合的划分过程，
+节点的左边表示蕴含图必然包含的边的集合，即$E_I$，
+右边为蕴含图一定不包含的边的集合，即$E_O$。
+当这个节点不能继续划分时，
+如果边集$E_I$为不确定图中某颗最小生成树的边集，
+那么划分到这个节点中所有的蕴含图即为可靠蕴含图。
+因此，由引理~\ref{lm:4.2.2}可以得到改节点中所有可靠蕴含图的存在概率之和。
+算法~\ref{alg:imst}为不确定图中最小生成树的可靠性求解算法。
+
+\begin{algorithm}[htb]
+\caption{不确定图中最小生成树的可靠性求解算法}
+\label{alg:imst}
+\begin{algorithmic}[1]
+\Statex \textbf{Comment} Calls from $\Call{IMST}{\emptyset, \emptyset,OST(\mathcal{G}),\mathcal{G}}$
+\Procedure{IMST}{$E_I,E_O, E_T, \mathcal{G}$} \Comment $\mathcal{G}=(V,E,W,P)$
+\State $r\gets \prod\limits_{e\in E_I}p(e)\times \prod\limits_{e\in E_O}{(1-p(e))}$
+\State $G\gets (V,E\setminus E_O,W)$
+\State $\Call{SetNumber}{T,1,1}$
+\State $S\gets \Call{FindSwapEdge}{G,T}$
+\For{$i\gets k$ \textbf{to} $|V|-2$}
+    \State $E_{I_i}\gets E_I\cup \{e_{k+1},e_{k+2},\cdots ,e_{i}\}$
+    \State $E_{O_i}\gets E_O\cup \{e_{i+1}\}$
+    \If {$\exists e'((e_{i+1},e')\in S)$}
+        \State $E_{T'}\gets E_T\cup \{e'\}\setminus \{e_{i+1}\}$
+        \State $r\gets r + \Call{IMST}{E_{I_i},E_{O_i},E_{T'},\mathcal{G}}$
+    \EndIf
+\EndFor
+\State \textbf{return} $r$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\section{实验结果}
+
+\begin{experiment}
+\label{ex:4.1}
+首先我们针对不确定图为完全图且所有边的权值都相等时的数据进行实验，
+其所有的生成树都为最小生成树。
+根据Cayley定理~\upcite{kelly1957congruence}，
+最小生成树的个数为$n^{n-1}$，
+其中$n$为不确定图中顶点的个数。
+\end{experiment}
+
+表~\ref{tab4.2}为算法$FERM$和$IERM$的运行结果，
+其中算法$FERM$没有采用并查集优化。
+表中的$N$表示不确定图中最小生成树的数量，
+$K_n$表示该不确定图是一个顶点数为$n$的完全图，
+时间比即为算法$FERM$与算法$IERM$的执行时间之比，
+从表中可以看出，随着图规模的增大，
+时间比也越来越大，
+这是因为算法$IERM$的程序时间相对复杂，
+导致常数级处理较多，
+所以当数据规模较少时效率不容易体现出来。
+
+\begin{table}%[htb]
+\centering
+\caption{不确定图为完全图时算法的执行效率对比}
+\label{tab4.2}
+\begin{tabular*}{0.7\columnwidth}{p{0.04\columnwidth}lp{0.1\columnwidth}lllp{0.04\columnwidth}ll}%p{0.04\columnwidth}cp{0.15\columnwidth}cp{0.15\columnwidth}cp{0.15\columnwidth}cp{0.1\columnwidth}cc}
+\toprule
+& &\multicolumn{2}{c}{运行时间(s)} \\
+\cline{3-4}
+$G$ &$N$ &$FERM$ &$IERM$ &时间比 &可靠性\\
+\midrule
+$K_5$ &125 &0.00100 &0.00100 &1.0 &0.729287\\
+$K_6$ &1296 &0.00500 &0.00500 &1.0 &0.949277\\
+$K_7$ &16807 &0.08100 &0.07000 &1.1 &0.812293\\
+$K_8$ &262144 &1.35800 &1.06700 &1.2 &0.981199\\
+$K_9$ &4782969 &29.2060 &22.1580 &1.3 &0.990147\\
+$K_{10}$ &100000000 &671.767 &521.091 &1.3 &0.990147\\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\begin{experiment}
+\label{ex:4.2}
+为了验证顶点数和边数对算法的影响，
+我们将边的权值控制在$1$到$100$之间。
+图$~\ref{fig4.1}$为算法$FERM$和$IERM$在不同顶点数下的时间对比图。
+\end{experiment}
+
+从图$~\ref{fig4.1}$可以得出算法$IERM$的时间复杂度与顶点数无关，
+这也验证了我们在第三章对并查集优化算法的理论分析。
+从图中还可以看出，
+这两个算法的运行时间都会随着边数的增多而增大。
+
+\begin{figure*}[!htb]
+\centering
+\subfigure[$n = 100$]{
+    \label{fig4.1:subfiga}
+    \begin{minipage}[t]{\figwidth}
+    \centering
+    \includegraphics[width=\figwidth]{Fig8a}
+    \end{minipage}}
+\subfigure[$n = 200$]{
+    \label{fig4.1:subfigb}
+    \begin{minipage}[t]{\figwidth}
+    \centering
+    \includegraphics[width=\figwidth]{Fig8b}
+    \end{minipage}}
+\subfigure[$n = 300$]{
+    \label{fig4.1:subfigc}
+    \begin{minipage}[t]{\figwidth}
+    \centering
+    \includegraphics[width=\figwidth]{Fig8c}
+    \end{minipage}}
+\subfigure[$n = 400$]{
+    \label{fig4.1:subfigd}
+    \begin{minipage}[t]{\figwidth}
+    \centering
+    \includegraphics[width=\figwidth]{Fig8d}
+    \end{minipage}}
+\caption{顶点数变化时算法的执行效率对比}
+\label{fig4.1}
+\end{figure*}
+
+\section{本章小结}
+
+本章提出了在不确定图中最小生成树的可靠性问题，
+并设计了基于边集划分的可靠性求解算法，
+为了避免该算法在每次搜索产生分支后都要重新求最小生成树，
+使用并查集的思想在原有的最小生成树上进行边的删除和替换来更快地获得新的最小生成树。
+实验结果验证了算法的高效性和理论分析的正确性。

@@ -1,0 +1,163 @@
+\begin{thebibliography}{99}
+
+\bibitem{jensen2009string}
+JENSEN L J, KUHN M, STARK M, et al. (2009) String 8-a global view on proteins
+  and their functional interactions in 630 organisms.
+\newblock {\em Nucleic acids research}, {\bf  37}, 412--416.
+
+\bibitem{ceol2009mint}
+CEOL A, ARYAMONTRI A C, LICATA L, et al. (2009) Mint, the molecular interaction
+  database: 2009 update.
+\newblock {\em Nucleic acids research}, {\bf  38}, 532--541.
+
+\bibitem{ljz2003cgq}
+李建中，李金宝，石胜飞. (2003) 传感器网络及其数据管理的概念、问题与进展.
+\newblock {\em 软件学报}, {\bf  14}, 1717--1727.
+
+\bibitem{sohraby2007wireless}
+SOHRABY K, MINOLI D, ZNATI T. (2007) {\em Wireless sensor networks: technology,
+  protocols, and applications}. John Wiley \& Sons.
+
+\bibitem{bader2003gaining}
+BADER J S, CHAUDHURI A, ROTHBERG J M, et al. (2003) Gaining confidence in
+  high-throughput protein interaction networks.
+\newblock {\em Nature biotechnology}, {\bf  22}, 78--85.
+
+\bibitem{asthana2004predicting}
+ASTHANA S, KING O D, GIBBONS F D, et al. (2004) Predicting protein complex
+  membership using probabilistic network reliability.
+\newblock {\em Genome research}, {\bf  14}, 1170--1175.
+
+\bibitem{suthram2006direct}
+SUTHRAM S, SHLOMI T, RUPPIN E, et al. (2006) A direct comparison of protein
+  interaction confidence assignment schemes.
+\newblock {\em BMC bioinformatics}, {\bf  7}, 360.
+
+\bibitem{jiang2006network}
+JIANG R, TU Z, CHEN T, et al. (2006) Network motif identification in stochastic
+  networks.
+\newblock {\em Proceedings of the National Academy of Sciences}, {\bf  103},
+  9404--9409.
+
+\bibitem{ghosh2007routing}
+GHOSH J, NGO H Q, YOON S, et al. (2007) On a routing problem within
+  probabilistic graphs and its application to intermittently connected
+  networks.
+\newblock pp. 1721--1729. IEEE.
+
+\bibitem{liu2013does}
+LIU Y, HE Y, LI M, et al. (2013) Does wireless sensor network scale? a
+  measurement study on greenorbs.
+\newblock {\em Parallel and Distributed Systems, IEEE Transactions on}, {\bf
+  24}, 1983--1993.
+
+\bibitem{muruganathan2005centralized}
+MURUGANATHAN S D, MA D C F, BHASIN R I, et al. (2005) A centralized
+  energy-efficient routing protocol for wireless sensor networks.
+\newblock {\em Communications Magazine, IEEE}, {\bf  43}, 8--13.
+
+\bibitem{cook2006mining}
+COOK D J, HOLDER L B. (2006) {\em Mining graph data}. John Wiley \& Sons.
+
+\bibitem{aggarwal2010managing}
+AGGARWAL C C, WANG H. (2010) {\em Managing and mining graph data}. Springer.
+
+\bibitem{borgelt2002mining}
+BORGELT C, BERTHOLD M R. (2002) Mining molecular fragments: Finding relevant
+  substructures of molecules.
+\newblock pp. 51--58. IEEE.
+
+\bibitem{yan2002gspan}
+YAN X, HAN J. (2002) gspan: Graph-based substructure pattern mining.
+\newblock pp. 721--724. IEEE.
+
+\bibitem{kuramochi2001frequent}
+KURAMOCHI M, KARYPIS G. (2001) Frequent subgraph discovery.
+\newblock pp. 313--320. IEEE.
+
+\bibitem{huan2004spin}
+HUAN J, WANG W, PRINS J, et al. (2004) Spin: mining maximal frequent subgraphs
+  from graph databases.
+\newblock pp. 581--586. ACM.
+
+\bibitem{zou2009frequent}
+ZOU Z, LI J, GAO H, et al. (2009) Frequent subgraph pattern mining on uncertain
+  graph data.
+\newblock pp. 583--592. ACM.
+
+\bibitem{zou2009frequent2}
+邹兆年，李建中，高宏等. (2009) 从不确定图中挖掘频繁子图模式.
+\newblock {\em 软件学报}, {\bf  20}, 2965--2976.
+
+\bibitem{zou2010mining}
+ZOU Z, LI J, GAO H, et al. (2010) Mining frequent subgraph patterns from
+  uncertain graph data.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on}, {\bf
+  22}, 1203--1218.
+
+\bibitem{zou2010discovering}
+ZOU Z, GAO H, LI J. (2010) Discovering frequent subgraphs over uncertain graph
+  databases under probabilistic semantics.
+\newblock pp. 633--642. ACM.
+
+\bibitem{li2012mining}
+LI J, ZOU Z, GAO H. (2012) Mining frequent subgraphs over uncertain graph
+  databases under probabilistic semantics.
+\newblock {\em The VLDB Journal}, {\bf  21}, 753--777.
+
+\bibitem{zou2010finding}
+ZOU Z, LI J, GAO H, et al. (2010) Finding top-k maximal cliques in an uncertain
+  graph.
+\newblock pp. 649--652. IEEE.
+
+\bibitem{zou2013largetopk}
+邹兆年，朱镕. (2013) 大规模不确定图上的top-k极大团挖掘算法.
+\newblock {\em 计算机学报}, {\bf  36}, 2146--2155.
+
+\bibitem{zhang2011knn}
+张应龙，李翠平，陈红等. (2011) 不确定图上的 knn 查询处理.
+\newblock {\em 计算机研究与发展}, {\bf  48}, 1850--1858.
+
+\bibitem{zhang2011knn2}
+张旭，何向南，金澈清等 (2011) 面向不确定图的 k 最近邻查询.
+\newblock {\em 计算机研究与发展}, {\bf  48}, 1871--1878.
+
+\bibitem{potamias2010k}
+POTAMIAS M, BONCHI F, GIONIS A, et al. (2010) K-nearest neighbors in uncertain
+  graphs.
+\newblock {\em Proceedings of the VLDB Endowment}, {\bf  3}, 997--1008.
+
+\bibitem{jeh2002simrank}
+JEH G, WIDOM J. (2002) Simrank: a measure of structural-context similarity.
+\newblock pp. 538--543. ACM.
+
+\bibitem{ljh2013cluster}
+李俊辉 (2013) 基于不确定图的层次聚类算法研究.
+\newblock {\em 中国管理信息化} , {\bf ?}, 79--80.
+
+\bibitem{dr2012cluster}
+丁悦 (2012) 不确定图聚类分析研究.
+\newblock Master's thesis. 西北农林科技大学.
+
+\bibitem{yuan2010efficiently}
+YUAN Y, CHEN L, WANG G. (2010) Efficiently answering probability
+  threshold-based shortest path queries over uncertain graphs.
+\newblock pp. 155--170. Springer.
+
+\bibitem{lmp2012shortest}
+李鸣鹏，邹兆年，高宏等. (2012) 不确定图上期望最短距离的计算.
+\newblock {\em 计算机研究与发展}, {\bf  49}, 2208--2220.
+
+\bibitem{cw2012maxflow}
+蔡伟，张柏礼，吕建华等. (2012) 不确定图最可靠最大流算法研究.
+\newblock {\em 计算机学报}, {\bf  35}, 2371--2380.
+
+\bibitem{zbl2014maxflow}
+张柏礼，吕建华，生衍等. (2014) 一种不确定图中最可靠最大流问题的解决方案.
+\newblock {\em 计算机学报}, {\bf  10}, 2084--2095.
+
+\bibitem{kelly1957congruence}
+KELLY P J. (1957) A congruence theorem for trees.
+\newblock {\em Pacific J. Math}, {\bf  7}, 961--968.
+
+\end{thebibliography}

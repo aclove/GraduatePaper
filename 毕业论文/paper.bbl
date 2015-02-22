@@ -160,4 +160,15 @@ YUAN Y, CHEN L, WANG G. (2010) Efficiently answering probability
 KELLY P J. (1957) A congruence theorem for trees.
 \newblock {\em Pacific J. Math}, {\bf  7}, 961--968.
 
+\bibitem{chu1965shortest}
+Chu, Yoeng-Jin and Liu, Tseng-Hong (1965) On shortest arborescence of a
+  directed graph.
+\newblock {\em Scientia Sinica}, {\bf  14}, 1396.
+
+\bibitem{gabow1986efficient}
+Gabow, Harold N and Galil, Zvi and Spencer, Thomas and Tarjan, Robert E (1986)
+  Efficient algorithms for finding minimum spanning trees in undirected and
+  directed graphs.
+\newblock {\em Combinatorica}, {\bf  6}, 109--122.
+
 \end{thebibliography}

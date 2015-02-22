@@ -241,4 +241,12 @@ while executing---line 1153 of file paper.bst
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry kelly1957congruence
 while executing---line 1153 of file paper.bst
-(There were 96 error messages)
+2 is an integer literal, not a string or missing field, for entry chu1965shortest
+while executing---line 1153 of file paper.bst
+2 is an integer literal, not a string, for entry chu1965shortest
+while executing---line 1153 of file paper.bst
+4 is an integer literal, not a string or missing field, for entry gabow1986efficient
+while executing---line 1153 of file paper.bst
+4 is an integer literal, not a string, for entry gabow1986efficient
+while executing---line 1153 of file paper.bst
+(There were 100 error messages)

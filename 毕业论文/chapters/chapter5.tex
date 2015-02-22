@@ -1,0 +1,67 @@
+
+%=======第五章=================================
+\newpage
+
+\chapter{不确定图中最优树形图的扩展研究}
+\vskip 0.3cm
+
+\section{问题定义}
+
+\begin{definition}[不确定有向图]
+\label{def:2.1.1}
+不确定有向图是一个四元组$\vec{\mathcal{G}} = (V, \vec{E}, W, P)$，
+其中$V$是顶点集，$\vec{E}$是有向边集，
+$W = \{w(\vec{e}) \,|\,  \vec{e} \in \vec{E}, w(\vec{e}) \in  \mathbb{N}^{+} \}$是边的权重集，
+$P = \{p(\vec{e}) \,|\,  \vec{e} \in \vec{E}, p(\vec{e}) \in (0, 1]\}$是边存在可能性的集合。
+\end{definition}
+
+\begin{definition}[最优树形图]
+\label{def:5.1.1}
+令不确定有向图$\vec{\mathcal{G}} = (V, \vec{E}, W, P)$，
+设$root$为不确定有向图的根节点，
+若有向生成树$\vec{T}$满足以下条件：
+\begin{enumerate}[(1)]
+\item 顶点$root$能够通过有向生成树的边到达图中任意顶点；
+\item 对于任意满足条件(1)的有向生成树$\vec{T'}$，
+要么其边权和大于生成树$\vec{T}$的边权和，
+要么其边权和等于生成树$\vec{T}$的边权和且其边的概率乘积不大于生成树$\vec{T}$的边的概率乘积；
+%有$\sum_{\vec{e} \in {\vec{E}}_{\vec{T}}} W(\vec{e}) \le \sum_{\vec{e'} \in {\vec{E}}_{\vec{T'}}}W(\vec{e'})$
+%或$\sum_{\vec{e} \in {\vec{E}}_{\vec{T}}} W(\vec{e}) = \sum_{\vec{e'} \in {\vec{E}}_{\vec{T'}}}W(\vec{e'})$
+\end{enumerate}
+则称有向生成树$\vec{T}$为不确定有向图$\vec{\mathcal{G}}$的最优树形图。
+\end{definition}
+
+在确定有向图中，最小树形图则是以$root$为根节点的最小生成树，
+且节点$root$能够通过树中的有向边到达图中任意节点。
+在1965年，朱永津和刘振宏提出的朱刘算法~\upcite{chu1965shortest}能够在$O(VE)$的时间复杂度内获得最小树形图；
+而在1986年，Gabow等人提出了更好的算法~\upcite{gabow1986efficient}，
+能够在$O(E+VlogV)$的时间复杂度内求得该问题的解。
+
+在不确定有向图中，由于受边概率的影响，
+不能完全套用已有的算法去求最优树形图，
+接下来我们借用朱刘算法的思想来求解最优树形图并提供理论证明。
+
+\section{最优树形图算法}
+
+首先，我们给出最优树形图算法的流程：
+\begin{enumerate}[(1)]
+\item 找到除了$root$以外其它节点的权值最小的入边，
+如果有多条边符合条件，
+则选择边概率最大的入边。
+用$inW_i$记录这条边的权值,
+$inP_i$记录这条边的概率；
+\item 如果除了$root$节点之外，还存在其它的孤立节点，
+则不存在最优树形图；
+\item 找到图中所有的环，并对环进行缩点和重新编号；
+\item 更新其它点到环上的点的权值和概率。
+\end{enumerate}
+
+显然，除了第(4)步需要对边的概率进行更新以外，
+其余的步骤与朱刘算法无异，
+假设节点$u$在该环上且该环被压缩后的新编号为$newV$，
+那么对于每一条进入节点$u$的边$(v,u,w,p)$，
+在新图中则建立边$(v,newV,w-inW_u,p/inP_i)$。
+
+\begin{example}
+\label{ex:5.1}
+\end{example}

@@ -8,15 +8,15 @@
 \section{问题定义}
 
 \begin{definition}[不确定有向图]
-\label{def:2.1.1}
+\label{def:5.1.1}
 不确定有向图是一个四元组$\vec{\mathcal{G}} = (V, \vec{E}, W, P)$，
 其中$V$是顶点集，$\vec{E}$是有向边集，
-$W = \{w(\vec{e}) \,|\,  \vec{e} \in \vec{E}, w(\vec{e}) \in  \mathbb{N}^{+} \}$是边的权重集，
-$P = \{p(\vec{e}) \,|\,  \vec{e} \in \vec{E}, p(\vec{e}) \in (0, 1]\}$是边存在可能性的集合。
+$W = \{w(e) \,|\,  e \in \vec{E}, w(e) \in  \mathbb{N}^{+} \}$是边的权重集，
+$P = \{p(e) \,|\,  e \in \vec{E}, p(e) \in (0, 1]\}$是边存在可能性的集合。
 \end{definition}
 
 \begin{definition}[最优树形图]
-\label{def:5.1.1}
+\label{def:5.1.2}
 令不确定有向图$\vec{\mathcal{G}} = (V, \vec{E}, W, P)$，
 设$root$为不确定有向图的根节点，
 若有向生成树$\vec{T}$满足以下条件：
@@ -64,4 +64,201 @@ $inP_i$记录这条边的概率；
 
 \begin{example}
 \label{ex:5.1}
+在图~\ref{fig5.1}中，最左边为一个不确定有向图，
+假定$v_4$为图中的$root$节点，
+根据最优树形图的求解步骤，
+首先需要获得每个顶点的入边，
+由图可知顶点$v_1,v_2, v_3, v_5$,
+$v_6, v_7, v_8, v_9$的入边分别为$e_2,e_1,e_5, e_3, e_{10}, e_8, e_9, e_{11}$,
+我们将环上的点重新编号为$U_1$，
+然而，$e_4,e_6,e_7$的权值和概率分别调整为$(4,1),(4,1),(4,2)$，
+当权值相等时我们则选择概率最大的边，
+所以我们选择边$e_7$连接顶点$v_4$和$U_1$，
+由于新图中不存在环，算法结束，
+最后只要将选择的边进行展开则可得到图的最优树形图。
 \end{example}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{Fig5-1}
+\caption{最优树形图求解过程。}
+\label{fig5.1}
+\end{figure}
+
+\begin{theorem}
+\label{trm:5.2.1}
+最优树形图算法是正确的。
+\end{theorem}
+
+\begin{proof}
+首先，若对每个顶点选择入边后没有形成环路，
+那么所选的入边的集合显然就是最优树形图。
+若形成环路$C$，可以通过反证法证明只需要删除环中的一条边，
+然后用另外一条指向环的边替换即可。
+假设存在另一个更优的解$S_1$，环中至少有两条边不在$S_1$中，
+若$e_1 \in C$且$e_1 \notin S_1$，
+我们只需将$e_1$加入$S_1$且删除$S_1$中与$e_1$有相同终点的边则可以得到一个新的解$S_2$，
+显然$S_2$不会比$S_1$差，
+因此我们只需要替换掉环中的一条边即可，
+而具体由哪一条边进行替换，
+则需要对所有指向环的边的权值和概率进行更改，
+然后重复最优树形图算法直至不存在环路即可。
+\end{proof}
+
+算法~\ref{alg:edmonds}为最优树形图算法的伪代码，
+4-7行对应算法流程的第一步，
+即求所有点的入边；
+8-15行则是根据入边的集合构造新的不确定有向图，
+最后将原图中选择的边和新图中的边进行合并得到最优树形图的边集，
+第9行的函数$\Call{BuildNewGraph}$构造新图的流程如下：
+\begin{enumerate}[(1)]
+\item 对于边集$inE$构成的每个环路，
+环路上的所有顶点将由一个新的顶点替换，
+其余顶点的编号不变；
+\item 对于任意属于图中且不在环中的边$e=(v_1,v_2)$，
+若顶点$v_2$为环中的一个顶点，
+则边$e$的权值更新为$w(e) - w(inE_{v_2})$，
+概率更新为$p(e) / p(inE_{v_2})$。
+否则该边保持不变。
+\end{enumerate}
+
+\begin{algorithm}[htb]
+\caption{不确定图中最优树形图算法}
+\label{alg:edmonds}
+\begin{algorithmic}[1]
+%\Statex \textbf{Comment} Calls from $\Call{OTG}{\emptyset, \emptyset,OST(\mathcal{G}),\mathcal{G}}$
+\Procedure{OTG}{$\vec{\mathcal{G}}, root$} \Comment $\vec{\mathcal{G}} = (V, \vec{E}, W, P)$
+\State $inE \gets \emptyset$
+\State $retE \gets \emptyset$
+\For{\textbf{each} $v \in \vec{V} \land v \neq root$}
+    \For{\textbf{each} $e=(v_1, v_2) \in \vec{E} \land v_2 = v$}
+        \If{$w(e) < w(inE_v) \lor (w(e) = w(inE_v) \land p(e) > p(inE_v))$}
+            \State $inE_v \gets e$
+        \EndIf
+    \EndFor
+\EndFor
+\If{$inE$构成的图存在环路}
+    \State $new\vec{\mathcal{G}} = \Call{BuildNewGraph}{\vec{\mathcal{G}}, inE}$
+    \State $retE = \Call{OTG}{new\vec{\mathcal{G}}, root}$
+    \For {\textbf{each} $e=(v_1, v_2) \in inE \land e \notin retE$}
+        \If {$\forall e'=(v'_1, v'_2) \in retE (v'_2 \neq v_2)$}
+            \State $retE \gets retE \cup \{e\}$
+        \EndIf
+    \EndFor
+\Else
+    \State $retE \gets inE$
+\EndIf
+\State \textbf{return} $retE$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\begin{theorem}
+\label{trm:5.2.1}
+算法$\,\ref{alg:edmonds}$的时间复杂度为$O(nm)$，
+$n$和$m$分别为不确定有向图的顶点数和边数。
+\end{theorem}
+
+\begin{proof}
+在获取每个顶点的入边时，
+需要遍历不确定有向图的每一条边，
+所以获取入边集合的时间复杂度为$O(m)$。
+而只有当入边集合构成的图存在环路时才会继续递归，
+每一次缩环后，新图的顶点数至少减少一个，
+因此最坏情况下需要构造$n$次新图，
+因此总的时间复杂度为$O(mn)$。
+\end{proof}
+
+我们之前都是假设最优树形图的根节点$root$已经被告知，
+若需要求根节点任意的最优树形图，
+则只要在图中新增加一个顶点和$n$条边，
+这$n$条边分别为新增的顶点指向其它$n$个顶点，
+且边的权值为原图中最大的权值加一，
+最后在得到的最优树形图中删除新增的顶点即可。
+
+\section{TOP-K最优树形图算法}
+
+在第三章中，介绍了TOP-K最优生成树算法，
+我们主要使用了边集划分的思想来求一个新的最优生成树，
+显然，该方法对于不确定有向图也同样适用，
+最容易想到的TOP-K最优树形图算法则是在边集划分之后，
+每次都使用上一节介绍的最优树形图算法获得一颗最优树形图,
+这样，算法的时间复杂度则为$O(Nn^2m)$，
+其中$N$为最优树形图的个数，
+显然这个时间复杂度有点高，
+我们并没有完全利用好最优树形图的性质。
+
+在第三章的并查集优化中，
+我们主要利用了定理$\,\ref{trm:3.3.2}$中的性质，
+定理$\,\ref{trm:3.3.2}$说明，
+我们只需要对最优生成树进行一次边替换操作则可以得到一颗新的最优生成树，
+然而这个思想在不确定有向图中同样适用，
+而且应用在最优树形图中会更加简单。
+
+\begin{theorem}
+\label{trm:5.3.1}
+设$\vec{T}$为不确定有向图$\vec{\mathcal{G}}$中的最小树形图，
+假设边$e = (u,v) \in \vec{E}_{\vec{T}}$连接的两个连通分量为$V_1$和$V_2$。
+那么对于任意不包含边$e$的最小树形图$\vec{T}'$，
+必然存在一条边$e'=(u',v')$满足$w(e')=w(e)$，其中$u' \in V_1$，$v' \in V_2$。
+\end{theorem}
+
+\begin{proof}
+我们可以通过反证法来证明该定理的正确性，
+假设存在一个最小树形图$\vec{T}*$，
+该最小树形图不存在边$e*=(u*,v*)$满足$w(e*)=w(e)$，
+其中$u* \in V_1$，$v* \in V_2$。
+那么该假设显然也适用于不确定图，
+这与定理$\,\ref{trm:3.3.2}$的正确性相悖，
+因此定理$\,\ref{trm:5.3.1}$是正确的。
+\end{proof}
+
+当删除边$e=(u,v)$时，
+联通分量$V_2$则形成了一颗以顶点$v$为根节点的有向子树，
+且顶点$v$能够到达任意其它顶点，
+由于边的有向性，
+其它顶点则不能够到达顶点$v$，
+因此我们选择的替换边$e'=(u',v')$必然满足$v'=v$，
+即边的终点始终指向顶点$v$。
+
+算法$\,\ref{alg:top-kotg}$为TOP-K最优树形图算法，
+该算法在求解替换边时，
+也只需要遍历不确定有向图，
+然后找到具有相同终点和权值的边即可，
+每次预处理的时间复杂度为$O(m)$，
+所以获得一个新的最小树形图的平均时间复杂度为$O(m/n)$，
+因此算法$\,\ref{alg:top-kotg}$的时间复杂度为$O(Nm)$，
+若使用优先队列优化，则时间复杂度为$O(KmlogN)$。
+
+\begin{algorithm}[htb]
+\caption{TOP-K最优树形图算法}
+\label{alg:top-kotg}
+\begin{algorithmic}[1]
+\Statex
+\setcounter{ALG@line}{0}
+\Algphase{\textbf{模块1：}TOP-K最优树形图算法}
+\Procedure{TopKOTG}{$K, \vec{\mathcal{G}}$} \Comment $\vec{\mathcal{G}}=(V,\vec{E},W,P)$
+\State $\vec{E}_{\vec{T}} \gets \Call{OTG}{\vec{\mathcal{G}}}$
+\State $MTGSet = \Call{FindAllMTG}{\emptyset, \emptyset, \vec{E}_{\vec{T}}, \vec{\mathcal{G}}}$
+\State 将集合$MTGSet$中所有最小树形图按照边乘积的值从大到小排序
+\State \textbf{return} 集合$MTGSet$中前$K$个最小树形图
+\EndProcedure
+\setcounter{ALG@line}{0}
+\Algphase{\textbf{模块2：}查找所有最小树形图}
+\Procedure{FindAllMTG}{$E_I,E_O, \vec{E}_{\vec{T}}, \vec{\mathcal{G}}$}
+\State $MTGSet \gets \{\vec{T}\}$
+\For{$i\gets k$ \textbf{to} $|V|-2$}
+    \State $E_{I_i} \gets E_I \cup \{e_{k+1},e_{k+2},\cdots ,e_{i}\}$
+    \State $E_{O_i}\gets E_O \cup \{e_{i+1}\}$ \Comment $e_{i+1} = (u_{i+1}, v_{i+1})$
+    \State 边$e_{i+1}$划分的连通分量为$V_1$和$V_2$，其中$u_{i+1} \in V_1, v_{i+1} \in V_2$
+    \If {$\exists e' = (u', v')(e' \neq e_{i+1} \land v'=v_{i+1} \land u' \in V_1)$}
+        \State $\vec{E}_{\vec{T}'} \gets \vec{E}_{\vec{T}} \cup \{e'\}\setminus \{e_{i+1}\}$
+        \State $MTGSet \gets MTGSet \cup \Call{FindAllMTG}{E_{I_i},E_{O_i},\vec{E}_{\vec{T}'},\vec{\mathcal{G}}}$
+    \EndIf
+\EndFor
+\State \textbf{return} $MTGSet$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\section{本章小结}

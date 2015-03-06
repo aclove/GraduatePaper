@@ -17,10 +17,10 @@
 时至今日，图论已经渗透到了许多领域，
 它在自然科学和社会科学中都有广泛的应用。
 
-在生物信息学中，蛋白质交互网络~\upcite{jensen2009string,ceol2009mint}用来记录蛋白质之间的交互作用。
+在生物信息学中，蛋白质交互网络\,\upcite{jensen2009string,ceol2009mint}用来记录蛋白质之间的交互作用。
 我们可以用无向图来表示蛋白质交互网络，
 其中顶点用来表示蛋白质，边用来表示蛋白质之间的交互;
-在无线传感器网络中~\upcite{ljz2003cgq,sohraby2007wireless}，
+在无线传感器网络中\,\upcite{ljz2003cgq,sohraby2007wireless}，
 传感器和他们之间的通信可以用图来表示;
 在社交网络中(例如Facebook、Twitter),
 图可以用来描述人与人之间的社会关系。
@@ -34,19 +34,19 @@
 大量的图数据具有不确定性。
 例如，生物信息学中，由于蛋白质交互的高通量生物检测技术
 存在固有误差，
-因此实验测得的蛋白质交互是否真实存在是不确定的~\upcite{bader2003gaining,asthana2004predicting,suthram2006direct,jiang2006network}；
+因此实验测得的蛋白质交互是否真实存在是不确定的\,\upcite{bader2003gaining,asthana2004predicting,suthram2006direct,jiang2006network}；
 在道路网络中，由于全球定位系统的数据传输故障和延时，
 当前网络中的交通流量数据无法确切放映实际情况，
 因而具有不确定性。
 在无线传感器网络中，由于物理世界的干扰、
 无线传感器网络的不稳定性、传感器节点的易失效性等原因，
-两个传感器之间是否可以正常通信是不确定的~\upcite{ghosh2007routing, liu2013does}。
+两个传感器之间是否可以正常通信是不确定的\,\upcite{ghosh2007routing, liu2013does}。
 我们称这些具有不确定因素的图数据为“不确定图数据”或“不确定图”。
 
 在无线传感器网络中，
 一般都需要在监测区域布置大量的传感器，
 而每个传感器的能量是有限的，
-使用最小的能耗保证整个传感器网络的畅通显然具有重要的意义~\upcite{muruganathan2005centralized}。
+使用最小的能耗保证整个传感器网络的畅通显然具有重要的意义\,\upcite{muruganathan2005centralized}。
 在理想情况下，我们可以将传感器网络用一个带权无向图来表示，
 权值代表两个传感器之间单位时间内通信所需的能耗，
 这样，可以使用经典的最小生成树算法(Prim、Kruskal)来获得一颗总能耗最小的网络拓扑结构树。
@@ -60,7 +60,7 @@
 国内外许多学者已经开始对不确定图数据展开了一些列研究，
 也取得了很多的成果。
 在国内，邹等人已经出版了不确定图数据挖掘一书，
-国际上也出版了Managing and Mining Graph Data~\upcite{cook2006mining}和Mining Graph Data~\upcite{aggarwal2010managing}等书籍。
+国际上也出版了Managing and Mining Graph Data\,\upcite{cook2006mining}和Mining Graph Data\,\upcite{aggarwal2010managing}等书籍。
 在一些国际顶级会议上(如SIGKDD、ICDE等)，
 也专门设立了不确定图数据的相关议程。
 
@@ -75,39 +75,39 @@
 
 (1) 频繁子图模式挖掘
 
-频繁子图模式挖掘也是确定图数据挖掘中的经典问题~\upcite{borgelt2002mining,yan2002gspan,kuramochi2001frequent,huan2004spin}，
+频繁子图模式挖掘也是确定图数据挖掘中的经典问题\,\upcite{borgelt2002mining,yan2002gspan,kuramochi2001frequent,huan2004spin}，
 目的是从一组确定图中发现频繁出现的子图模式。
 而在不确定图数据中，
-现有的研究主要集中在期望频繁子图模式挖掘~\upcite{zou2009frequent,zou2009frequent2,zou2010mining}、
-概率频繁子图模式挖掘~\upcite{zou2010discovering, li2012mining}和稠密子图挖掘~\upcite{zou2010finding,zou2013largetopk}。
+现有的研究主要集中在期望频繁子图模式挖掘\,\upcite{zou2009frequent,zou2009frequent2,zou2010mining}、
+概率频繁子图模式挖掘\,\upcite{zou2010discovering, li2012mining}和稠密子图挖掘\,\upcite{zou2010finding,zou2013largetopk}。
 前两者的主要目的是求解支持度和置信度满足一个指定阈值的频繁子图模式，
 在不确定图中的稠密子图挖掘具有代表性的有Top-K极大团挖掘和紧密顶点子集挖掘。
 
 (2)分类和聚类
 
 我们知道，分类和聚类算法在数学、统计学、计算机科学和生物学等领域都有很多应用。
-在不确定图数据中，对分类算法的研究主要是K近邻查询算法~\upcite{zhang2011knn,zhang2011knn2,potamias2010k}。
+在不确定图数据中，对分类算法的研究主要是K近邻查询算法\,\upcite{zhang2011knn,zhang2011knn2,potamias2010k}。
 例如，
-文献~\cite{zhang2011knn}提出了基于SimRank~\upcite{jeh2002simrank}度量的方法来求解给定节点的$k$个最相似的节点，
-文献~\cite{potamias2010k}也对不确定图中的KNN进行了研究，
+文献\,\cite{zhang2011knn}提出了基于SimRank\,\upcite{jeh2002simrank}度量的方法来求解给定节点的$k$个最相似的节点，
+文献\,\cite{potamias2010k}也对不确定图中的KNN进行了研究，
 它提出了三种方法(median-distance, majority-distance, expected-reliable-distance)来度量两个节点之间的距离。
-然而对聚类算法的研究主要有层次聚类算法~\upcite{ljh2013cluster,dr2012cluster}。
-文献~\cite{ljh2013cluster}首先将求出的强联通子图作为聚类中心，
+然而对聚类算法的研究主要有层次聚类算法\,\upcite{ljh2013cluster,dr2012cluster}。
+文献\,\cite{ljh2013cluster}首先将求出的强联通子图作为聚类中心，
 然后对余下的顶点进行层次聚类，
-文献~\cite{dr2012cluster}主要是基于LinLog能量模型及其Newman-Girvan的模块化聚类，
+文献\,\cite{dr2012cluster}主要是基于LinLog能量模型及其Newman-Girvan的模块化聚类，
 提出了一种多层次模块化聚类算法框架。
 
 (3)基于最短路、最大流等图论模型
 
 在图论中，Dijkstra、Prim和Edmonds-Karp算法都是用来解决图论中经典问题(最短路、最小生成树和最大流)的方法，
 然而这些方法并不能直接应用在不确定图数据中。
-因而，一些学者对不确定图中的最短路径、最大流等问题进行了研究~\upcite{yuan2010efficiently,lmp2012shortest,cw2012maxflow,zbl2014maxflow}，
-文献~\cite{yuan2010efficiently}首先定义了概率语义下的最短路径问题，
+因而，一些学者对不确定图中的最短路径、最大流等问题进行了研究\,\upcite{yuan2010efficiently,lmp2012shortest,cw2012maxflow,zbl2014maxflow}，
+文献\,\cite{yuan2010efficiently}首先定义了概率语义下的最短路径问题，
 然后设计了求大于给定阈值的所有最短路径的算法；
-文献~\cite{cw2012maxflow}给出了最大流可靠性的概率计算模型，
+文献\,\cite{cw2012maxflow}给出了最大流可靠性的概率计算模型，
 提出了一种基于简单路径组合思想的算法和基于状态空间划分的最可靠最大流改进算法。
 
-\section{本文的结构安排} 
+\section{本文的结构安排}
 
 第一章~~~简要介绍了不确定图的研究背景、国内外研究现状等相关知识。
 

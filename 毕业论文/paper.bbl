@@ -119,7 +119,7 @@ ZOU Z, LI J, GAO H, et al. (2010) Finding top-k maximal cliques in an uncertain
 \newblock {\em 计算机研究与发展}, {\bf  48}, 1850--1858.
 
 \bibitem{zhang2011knn2}
-张旭，何向南，金澈清等 (2011) 面向不确定图的 k 最近邻查询.
+张旭，何向南，金澈清等. (2011) 面向不确定图的k最近邻查询.
 \newblock {\em 计算机研究与发展}, {\bf  48}, 1871--1878.
 
 \bibitem{potamias2010k}
@@ -132,11 +132,11 @@ JEH G, WIDOM J. (2002) Simrank: a measure of structural-context similarity.
 \newblock pp. 538--543. ACM.
 
 \bibitem{ljh2013cluster}
-李俊辉 (2013) 基于不确定图的层次聚类算法研究.
-\newblock {\em 中国管理信息化} , {\bf ?}, 79--80.
+李俊辉. (2013) 基于不确定图的层次聚类算法研究.
+\newblock {\em 中国管理信息化}, {\bf  15}, 79--80.
 
 \bibitem{dr2012cluster}
-丁悦 (2012) 不确定图聚类分析研究.
+丁悦. (2012) 不确定图聚类分析研究.
 \newblock Master's thesis. 西北农林科技大学.
 
 \bibitem{yuan2010efficiently}
@@ -156,17 +156,21 @@ YUAN Y, CHEN L, WANG G. (2010) Efficiently answering probability
 张柏礼，吕建华，生衍等. (2014) 一种不确定图中最可靠最大流问题的解决方案.
 \newblock {\em 计算机学报}, {\bf  10}, 2084--2095.
 
+\bibitem{zhanghj2011topk}
+张海杰, 姜守旭, 邹兆年. (2011) 不确定图上的高效top-k近邻查询处理算法.
+\newblock {\em 计算机学报}, {\bf  34}, 1885--1896.
+
 \bibitem{kelly1957congruence}
 KELLY P J. (1957) A congruence theorem for trees.
 \newblock {\em Pacific J. Math}, {\bf  7}, 961--968.
 
 \bibitem{chu1965shortest}
-Chu, Yoeng-Jin and Liu, Tseng-Hong (1965) On shortest arborescence of a
+Chu, Yoeng-Jin and Liu, Tseng-Hong. (1965) On shortest arborescence of a
   directed graph.
 \newblock {\em Scientia Sinica}, {\bf  14}, 1396.
 
 \bibitem{gabow1986efficient}
-Gabow, Harold N and Galil, Zvi and Spencer, Thomas and Tarjan, Robert E (1986)
+Gabow, Harold N and Galil, Zvi and Spencer, Thomas and Tarjan, et al. (1986)
   Efficient algorithms for finding minimum spanning trees in undirected and
   directed graphs.
 \newblock {\em Combinatorica}, {\bf  6}, 109--122.

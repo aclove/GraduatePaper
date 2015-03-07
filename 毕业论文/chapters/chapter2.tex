@@ -234,7 +234,7 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=\imagewidth]{Fig2-3}
+\includegraphics[width=0.9\imagewidth]{Fig2-3}
 \caption{例~\ref{ex:2}：
 不确定图$\mathcal{G}$。}
 \label{fig2.3}
@@ -252,9 +252,9 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 算法~\ref{alg:ost}为最优生成树算法的伪代码，
 我们使用了并查集数据结构来快速合并两个连通分量，
 每个连通分量都会有一个唯一的根节点，
-通过函数$\Call{GetRoot}$即能快速查询到每个顶点的根节点。
+通过函数$\Call{GetRoot}{}$即能快速查询到每个顶点的根节点。
 合并连通分量只需要一条赋值语句即可，
-函数$\Call{OST}$中的第7行则是合并顶点$u$和顶点$v$所在的连通分量。
+函数$\Call{OST}{}$中的第7行则是合并顶点$u$和顶点$v$所在的连通分量。
 
 \begin{algorithm}[!htb]
 \caption{最优生成树算法}
@@ -298,7 +298,7 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 时间复杂度为$O(mlogm)$，
 由于并查集均摊的时间复杂度为$O(1)$，
 所以算法$\,\ref{alg:ost}$中第4-8行处理一条边的时间复杂度为$O(1)$，
-那么函数$\Call{OST}$的时间复杂度则为$O(m)$，
+那么函数$\Call{OST}{}$的时间复杂度则为$O(m)$，
 因此算法的总时间复杂度为$O(mlogm)$。
 \end{proof}
 
@@ -334,8 +334,45 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
  \item 对最优生成树中的每个顶点进行深度优先搜索；
  \item 在搜索的过程中记录这条路径中优先级最低的边，
  假设搜索树的根节点为$i$，当前节点为$j$，
- 则我们用记录的优先级最低的边替换$F(i,j)$。 
+ 则我们用记录的优先级最低的边替换$F(i,j)$。
 \end{enumerate}
+
+算法$\,\ref{alg:sost}$为次优生成树算法，
+函数$\Call{DFSGetF}{}$中的参数分别代表生成树的根节点、当前遍历节点的父节点、当前节点和最优生成树中的边集。
+我们以最优生成树中的每个节点为根节点进行深度优先搜索求得最优生成树中任意两个顶点之间的路径中优先级最低的边。
+
+\begin{algorithm}[!htb]
+\caption{次优生成树算法}
+\label{alg:sost}
+\begin{algorithmic}[1]
+\Statex
+\setcounter{ALG@line}{0}
+\Algphase{\textbf{模块1： }求根节点到其它节点的路径中优先级最低的边}
+\Procedure{DFSGetF}{$root, u, v, e, E_O^{\mathcal{G}}$}
+\For {\textbf{each} $v' \in V \land (v', u) \in E_O^{\mathcal{G}} \land v' \neq u$} \Comment $e'=(v',u)$
+    \If {$w(e') > w(e) \lor (w(e')=w(e) \land p(e')<p(e'))$}
+        \State $F(root,v')=e'$
+        \State $\Call{DFSGetF}{root,v,v',e',E_O^{\mathcal{G}}}$
+    \Else
+        \State $F(root,v')=e$
+        \State $\Call{DFSGetF}{root,v,v',e, E_O^{\mathcal{G}}}$
+    \EndIf
+\EndFor
+\EndProcedure
+\setcounter{ALG@line}{0}
+\Algphase{\textbf{模块2： }次优生成树算法}
+\Procedure{SOST}{$\mathcal{G},E_O^{\mathcal{G}}$} \Comment $\mathcal{G}=(V,E,W,P)$
+\For {\textbf{each} $v \in V$}
+    \State $\Call{DFSGetF}{v,-1,v,null,E_O^{\mathcal{G}}}$
+\EndFor
+\State $SOSet = \emptyset$
+\For {\textbf{each} $e' \in E$} \Comment $e'=(u',v')$
+    \State $SOSet = SOSet \cup (T_O^{\mathcal{G}} + F(u',v') \setminus e )$
+\EndFor
+\State \textbf{return} 集合$SOSet$中最优的生成树
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
 
 \begin{theorem}
 \label{trm:2.2.3}
@@ -344,7 +381,18 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 \end{theorem}
 
 \begin{proof}
+函数$\Call{DFSGetF}{}$遍历整个最优生成树的时间复杂度为$O(n)$，
+而函数$\Call{DFSGetF}{}$\\
+总共会被调用$n$次，
+所以函数$\Call{SOST}{}$中第2-3的时间复杂度为$O(n^2)$。
+而第5-6行的时间复杂度为$O(m)$，
+其中$m$为不确定图中的边数，
+因此总的时间复杂度为$O(n^2+m) \approx O(n^2)$。
 \end{proof}
 
 \section{本章小结}
-
+首先给出了最小生成树和最大乘积生成树的定义，
+然后通过前两者定义的结合给出了不确定图中的最优生成树和次优生成树的定义，
+即最优生成树可以看作是满足最小生成树条件的最大乘积生成树。
+然后证明了最大乘积生成树算法是可以和最小生成树算法进行相互转换的，
+最后结合最优生成树的性质提出了最优生成树算法和次优生成树算法。

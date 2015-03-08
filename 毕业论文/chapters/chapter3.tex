@@ -126,7 +126,6 @@ D_{i}= \{G\,|\, G\in S \wedge E_{I_i} \subseteq {E_G}\wedge E_{O_i}\cap {E_G}=\e
 \end{algorithm}
 
 \begin{example}
-\label{ex:3}
 图$\,\ref{fig3.1:subfiga}$为一个不确定图 ，
 图$\,\ref{fig3.1:subfigb}$为不确定图中主蕴含图的其中一颗最小生成树，
 其中边的权值和为$4$，
@@ -139,6 +138,7 @@ D_{i}= \{G\,|\, G\in S \wedge E_{I_i} \subseteq {E_G}\wedge E_{O_i}\cap {E_G}=\e
 这颗生成树的边集为节点左侧的边集，
 粗边框右上角的数字表示这个生成树中所有边的概率乘积。
 显然，最优生成树和次优生成树的边集分别为$\{e_2,e_3,e_5\}$和$\{e_2,e_3,e_6\}$。
+\label{ex:3}
 \end{example}
 
 \begin{figure}[!htb]
@@ -316,12 +316,14 @@ $\cdots, u_{x-1}, \to v(u_x)$。
 根据算法$\,\ref{alg:ns}$可知，$L_i$是通过前序遍历得到的结果，
 而$R_i=\max\{L_j \,|\, $ 顶点 $j$ 为顶点$i$的子孙节点$\}$，
 即$R_i$为以顶点$i$为根节点的子树中$L_i$的最大值。
+\label{ex:4}
 \end{example}
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\imagewidth]{Fig3-3}
-\caption{编号后的最小生成树。}
+\caption{例~\ref{ex:4}：
+编号后的最小生成树。}
 \label{fig3.3}
 \end{figure}
 
@@ -408,12 +410,14 @@ $\cdots, u_{x-1}, \to v(u_x)$。
 又因为$w(e_2)=w(e_4)$，
 所以边$e_4$为边$e_2$的替换边，
 因此集合$S=\{(e_1,e_3),(e_2,e_4)\}$。
+\label{ex:5}
 \end{example}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1.3\imagewidth]{Fig3-4}
-\caption{路径压缩过程。}
+\caption{例~\ref{ex:5}：
+路径压缩过程。}
 \label{fig3.4}
 \end{figure}
 
@@ -584,7 +588,6 @@ $m$为不确定图$\mathcal{G}$中的边数。
 所以算法$\,\ref{alg:top-k3}$非常适合K值较小的情况。
 
 \begin{example}
-\label{ex:4}
 图$\,\ref{fig3.6}$为函数$\Call{TopKMST}{9,\mathcal{G}}$的调用过程，
 其中参数$\mathcal{G}$为图$\,\ref{fig3.1:subfiga}$中的不确定图。
 在图$\,\ref{fig3.6}$中，
@@ -592,12 +595,13 @@ $m$为不确定图$\mathcal{G}$中的边数。
 每次都会选择一个边概率乘积最大的最小生成树进行扩展。
 从图中可以看出，任何一个节点对应的最小生成树的边概率乘积都要比其子节点或子孙节点对应的最小生成树的边概率乘积要大，
 这与我们之前的分析完全一致。
+\label{ex:6}
 \end{example}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1.3\imagewidth]{Fig3-6}
-\caption{例~\ref{ex:4}：
+\caption{例~\ref{ex:6}：
 函数TopKMST($9,\mathcal{G}$)的调用过程。}
 \label{fig3.6}
 \end{figure}
@@ -626,4 +630,4 @@ $m$为不确定图$\mathcal{G}$中的边数。
 使用边替换的方式可以快速的获得每个子图集合对应的最小生成树，
 并且提出了基于并查集优化和启发式搜索优化的算法，
 这两种算法分别适用于$K$值较大和较小的情况。
-最后的实验结果也与理论分析相符。
+最后的实验结果也与理论分析相符。 

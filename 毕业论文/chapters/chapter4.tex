@@ -6,40 +6,67 @@
 \vskip 0.3cm
 
 \section{问题定义}
+在经典的传感器网络中，
+需要在监测区域布置大量的传感器，
+而每个传感器的能量是有限的，
+使用最小的能耗保证整个传感器网络的畅通具有重要的意义。
+在理想情况下，可以用最小生成树来表示整个网络的最小能耗，
+由于两个传感器之间的通信可能会出现故障，
+如果当前的最小生成树上的边出现不连通的情况，
+则需要重新获取一颗最小生成树来保证整个网络的畅通，
+因此研究整个网络畅通的可靠性具有重要意义。
+不确定图的蕴含图用不确定图中的所有顶点和可能存在的边来表示，
+蕴含图存在的概率为所有边出现或不出现的概率的乘积。
+如果一个蕴含图是连通的，
+那么这个蕴含图至少存在一颗最小生成树。
+本章的目的是为了求不确定图中最小生成树的可靠性，
+将其定义为满足以下条件的蕴含图的概率总和：
+这些蕴含图的最小生成树也是不确定图中主蕴含图的最小生成树，
+其中主蕴含图为不确定图中的所有边都出现的蕴含图。
+
+\begin{definition}[主蕴含图]
+\label{def:4.1.1}
+设不确定图$\mathcal{G}=(V,E,W,P)$，
+则确定图$G=(V,E,W)$\\
+为不确定图$\mathcal{G}$的主蕴含图，
+记为$\widehat{G}$。
+\end{definition}
 
 \begin{definition}[可靠蕴含图]
-\label{def:4.1.1}
+\label{def:4.1.2}
 设$G$为不确定图$\mathcal{G}=(V,E,W,P)$的任意蕴含图，
-$T^{G}_M$为图$G$的最小生成树，
+$T^{G}_M$\\
+为图$G$的最小生成树，
 若满足$\sum_{e \in E_{T^{G}_M}}w(e) = W^{\mathcal{G}}_M$，
 则称$G$为不确定图$\mathcal{G}$的可靠蕴含图。
 \end{definition}
 
 \begin{definition}[不确定图中最小生成树的可靠性]
-\label{def:4.1.2}
+\label{def:4.1.3}
 设不确定图$\mathcal{G}=(V,E,W,P)$，
-令$S=\{G|G \in Imp(\mathcal{G}) \land W^{G}_M = W^{\mathcal{G}}_M\}$为
+令$SR=\{G|G \in Imp(\mathcal{G}) \land W^{G}_M = W^{\mathcal{G}}_M\}$为
 不确定图$\mathcal{G}$中所有可靠蕴含图的集合，
 则我们定义不确定图$\mathcal{G}$中最小生成树的可靠性为：
 \begin{equation}
 \nonumber
-r = \sum_{G \in R} \Pr(\mathcal{G} \Rightarrow G).
+r = \sum_{G \in SR} \Pr(\mathcal{G} \Rightarrow G).
 \end{equation}
 \end{definition}
 
 \begin{example}
-\label{ex:6}
-表~\ref{tab4.1}的第一列显示了图~\ref{fig2.1:subfiga}中的不确定图的蕴含图边集，
+\label{ex:7}
+表$\,\ref{tab4.1}$的第一列显示了图$\,\ref{fig2.1}(a)$中的不确定图的蕴含图边集，
 该不确定图一共有三颗最小生成树
 $($其边集分别为$\{e_1,e_2,e_4\}, \{e_2,e_3,e_4\}$和$\{e_2,e_4,e_5\})$，
-因此一共有$7$个可靠蕴含图$($表~\ref{tab4.1}的前$7$行对应的蕴含图$)$，
+因此一共有$7$个可靠蕴含图$($表$\,\ref{tab4.1}$的前$7$行对应的蕴含图$)$，
 由于非可靠蕴含图出现的概率和为$0.37378$，
 因此该不确定图的最小生成树的可靠性为$1-0.37378=0.62622$。
 \end{example}
 
 \begin{table}
 \centering
-\caption{图~\ref{fig2.1:subfiga}的可靠性评估表.}\label{tab4.1}
+\caption{图$\,\ref{fig2.1}(a)$的可靠性评估表.}
+\label{tab4.1}
 \begin{tabular}{lll}
 \toprule
 蕴含图边集 &包含的最小生成树 &出现概率\\
@@ -56,6 +83,16 @@ others &none &$0.37378$\\
 \end{tabular}
 \end{table}
 
+由于不确定图的蕴含图数量会随着边数的增加而成指数增长，
+如果通过枚举每个蕴含图的方法来求可靠性需要耗费大量的时间。
+在本章中，我们使用了边集划分的方法，
+将不确定图的所有蕴含图划分到多个集合当中，
+由于通过边集划分之后，
+在同一个集合中的蕴含图都满足一个条件，
+即一定包含集合$E_I$中的边且不包含集合$E_O$中的边。
+因此，以该性质为突破点，
+设计了最小生成树的可靠性求解算法。
+
 \section{最小生成树的可靠性求解算法}
 
 \begin{theorem}
@@ -71,8 +108,9 @@ $\mathcal{G'}=(V, E', W, P)$，
 \begin{equation}
 \nonumber
 \begin{split}
-\sum\limits_{G\in Imp(\mathcal{G}) \land e \in E}{Pr(\mathcal{G}\Rightarrow G)}
-&= \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E}{p(e) Pr(\mathcal{G'}\Rightarrow G \setminus e)}\\
+\sum\limits_{G\in Imp(\mathcal{G}) \land e \in E_G}{Pr(\mathcal{G}\Rightarrow G)}
+&= \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E_G}{p(e) Pr(\mathcal{G'}\Rightarrow G \setminus e)}\\
+&= p(e) \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E_G}{Pr(\mathcal{G'}\Rightarrow G \setminus e)}\\
 &= p(e) \sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}\\
 \end{split}
 \end{equation}
@@ -80,7 +118,7 @@ $\mathcal{G'}=(V, E', W, P)$，
 \begin{equation}
 \nonumber
 \begin{split}
-\sum\limits_{G\in Imp(\mathcal{G}) \land e \notin E}{Pr(\mathcal{G}\Rightarrow G)}
+\sum\limits_{G\in Imp(\mathcal{G}) \land e \notin E_G}{Pr(\mathcal{G}\Rightarrow G)}
 &= (1-p(e)) \sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}\\
 \end{split}
 \end{equation}
@@ -90,7 +128,7 @@ $\mathcal{G'}=(V, E', W, P)$，
 \nonumber
 \begin{split}
 \sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}
-&= \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E}{Pr(\mathcal{G}\Rightarrow G)} + \sum\limits_{G\in Imp(\mathcal{G}) \land e \notin E}{Pr(\mathcal{G}\Rightarrow G)}\\
+&= \sum\limits_{G\in Imp(\mathcal{G}) \land e \in E_G}{Pr(\mathcal{G}\Rightarrow G)} + \sum\limits_{G\in Imp(\mathcal{G}) \land e \notin E_G}{Pr(\mathcal{G}\Rightarrow G)}\\
 &= \sum\limits_{G\in Imp(\mathcal{G'})}{Pr(\mathcal{G'}\Rightarrow G)}
 \end{split}
 \end{equation}
@@ -114,7 +152,7 @@ $\mathcal{G'}=(V, E', W, P)$，
    \mathcal{G}_m = \mathcal{G}_{m-1} \setminus \{e_m\}
 \end{array}
 \end{equation}
-则由定理~\ref{trm:4.2.1}可知
+则由定理$\,\ref{trm:4.2.1}$可知
 \begin{equation}
 \nonumber
 \sum\limits_{G\in Imp(\mathcal{G})}{Pr(\mathcal{G}\Rightarrow G)}=
@@ -137,24 +175,31 @@ $\mathcal{G'}=(V, E', W, P)$，
 \end{lemma}
 
 
-在引理~\ref{lm:3.2.1}中，
+在引理$\,\ref{lm:3.2.1}$中，
 我们知道可以通过边集划分的方法来获取最小生成树。
 同样的，这种划分也适用于不确定图中所有的蕴含图，
-也就是说，我们可以将图~\ref{fig3.2}看成是不确定图中所有蕴含图集合的划分过程，
+也就是说，我们可以将图$\,\ref{fig3.2}$看成是不确定图中所有蕴含图集合的划分过程，
 节点的左边表示蕴含图必然包含的边的集合，即$E_I$，
 右边为蕴含图一定不包含的边的集合，即$E_O$。
 当这个节点不能继续划分时，
 如果边集$E_I$为不确定图中某颗最小生成树的边集，
 那么划分到这个节点中所有的蕴含图即为可靠蕴含图。
-因此，由引理~\ref{lm:4.2.2}可以得到改节点中所有可靠蕴含图的存在概率之和。
-算法~\ref{alg:imst}为不确定图中最小生成树的可靠性求解算法。
+因此，由引理$\,\ref{lm:4.2.2}$可以得到该节点中所有可靠蕴含图的存在概率之和。
+
+算法$\,\ref{alg:rmst}$为不确定图中最小生成树的可靠性求解算法。
+对于一个不确定图$\mathcal{G}$，
+可以直接调用函数$\Call{RMST}{\emptyset,\emptyset,OST(\mathcal{G}),\mathcal{G}}$得到不确定图中最小生成树的可靠性。
+前两个参数表示必然包含的边集和必然不包含的边集都为空集，
+所以不确定图中的任意蕴含图都满足条件。
+函数$\Call{OST}{\mathcal{G}}$返回不确定图$\mathcal{G}$的最优生成树的边集。
+算法$\,\ref{alg:rmst}$中的第2行即为求必然包含集合$E_I$中的边且必然不包含集合$E_O$中的边的蕴含图的存在概率之和。
 
 \begin{algorithm}[htb]
 \caption{不确定图中最小生成树的可靠性求解算法}
-\label{alg:imst}
+\label{alg:rmst}
 \begin{algorithmic}[1]
-\Statex \textbf{Comment} Calls from $\Call{IMST}{\emptyset, \emptyset,OST(\mathcal{G}),\mathcal{G}}$
-\Procedure{IMST}{$E_I,E_O, E_T, \mathcal{G}$} \Comment $\mathcal{G}=(V,E,W,P)$
+\Statex \textbf{Comment} Calls from $\Call{RMST}{\emptyset, \emptyset,OST(\mathcal{G}),\mathcal{G}}$
+\Procedure{RMST}{$E_I,E_O, E_T, \mathcal{G}$} \Comment $\mathcal{G}=(V,E,W,P)$
 \State $r\gets \prod\limits_{e\in E_I}p(e)\times \prod\limits_{e\in E_O}{(1-p(e))}$
 \State $G\gets (V,E\setminus E_O,W)$
 \State $\Call{SetNumber}{T,1,1}$
@@ -164,7 +209,7 @@ $\mathcal{G'}=(V, E', W, P)$，
     \State $E_{O_i}\gets E_O\cup \{e_{i+1}\}$
     \If {$\exists e'((e_{i+1},e')\in S)$}
         \State $E_{T'}\gets E_T\cup \{e'\}\setminus \{e_{i+1}\}$
-        \State $r\gets r + \Call{IMST}{E_{I_i},E_{O_i},E_{T'},\mathcal{G}}$
+        \State $r\gets r + \Call{RMST}{E_{I_i},E_{O_i},E_{T'},\mathcal{G}}$
     \EndIf
 \EndFor
 \State \textbf{return} $r$
@@ -172,25 +217,73 @@ $\mathcal{G'}=(V, E', W, P)$，
 \end{algorithmic}
 \end{algorithm}
 
+\begin{theorem}
+\label{trm:4.2.2}
+算法$\,\ref{alg:rmst}$的时间复杂度为$O(Nm)$。
+其中$N$为不确定图中最小生成树的数目，
+$m$为不确定图中的边数。
+\end{theorem}
+
+\begin{proof}
+首先，由定理$\,\ref{trm:3.3.3}$可知，
+函数$\Call{SetNumber}{}$的时间复杂度为$O(n)$，
+求解替换边的函数$\Call{FindSwapEdge}{}$的时间复杂度为$O(m)$。
+使用并查集优化的边集划分算法获取一颗新的最小生成树的平均时间复杂度为$O(m/n)$，
+假设$m>n$，则算法$\,\ref{alg:rmst}$的时间复杂度为$O(Nn*(m/n))=O(Nm)$。
+\end{proof}
+
+\begin{example}
+图$\,\ref{fig4.1}$使用了一个树形结构来表示函数$\Call{RMST}{\emptyset,\emptyset,OST(\mathcal{G}),\mathcal{G}}$递归调用的全过程，
+节点中左右两边表示传递给被调用函数的参数，
+左边表示集合$E_I$中的元素，右边表示集合$E_O$中的元素，
+带有粗边框的节点表示到此为止已经找到了一个可靠蕴含图集合，
+这个集合中所有的蕴含图都有同样的最小生成树，
+粗边框右上角的数字表示这个蕴含图集合中所有的蕴含图出现的概率之和，
+所有的数字之和为$0.785636$，
+即最小生成树的可靠性。
+从图中可以看出所有的可靠蕴含图被放入$9$个集合当中，
+而整个不确定图有$2^6=64$个蕴含图，
+因此算法避免了大量的重复计算。
+\label{ex:8}
+\end{example}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=\textwidth]{Fig4-1}
+\caption{例~\ref{ex:8}：
+函数RMST($\emptyset,\emptyset,OST(\mathcal{G}),\mathcal{G}$)的递归调用过程}
+\label{fig4.1}
+\end{figure}
+
 \section{实验结果}
+
+在这一节中，我们比较并查集优化和只使用边集划分的方法的运行效率，
+假设算法$FERM$(Fundamental algorithm for Evaluating the Reliability of an MST)采用在边集划分后每次都重新求最小生成树的方法，
+而算法$IERM$(Improved algorithm for Evaluating the Reliability of an MST)使用并查集优化，
+即算法$\,\ref{alg:rmst}$中的函数$\Call{RMST}{}$。
+然后，分别在不同的图结构中对两个算法进行分析。
 
 \begin{experiment}
 \label{ex:4.1}
-首先我们针对不确定图为完全图且所有边的权值都相等时的数据进行实验，
+由定理$\,\ref{trm:4.2.2}$可知算法的时间复杂度与最小生成树的数目相关，
+最小生成树的数目直接影响到两个算法的运行效率。
+在顶点数目不变的情况下，图
+中所有权值都相等且边的数目越大时，最小生成树的数目越多。
+因此我们针对不确定图为完全图且所有边的权值都相等时的数据进行实验，
 其所有的生成树都为最小生成树。
-根据Cayley定理~\upcite{kelly1957congruence}，
+根据Cayley定理$\,\upcite{kelly1957congruence}$，
 最小生成树的个数为$n^{n-1}$，
 其中$n$为不确定图中顶点的个数。
 \end{experiment}
 
-表~\ref{tab4.2}为算法$FERM$和$IERM$的运行结果，
-其中算法$FERM$没有采用并查集优化。
+表~\ref{tab4.2}为算法$FERM$和$IERM$的运行结果。
 表中的$N$表示不确定图中最小生成树的数量，
 $K_n$表示该不确定图是一个顶点数为$n$的完全图，
 时间比即为算法$FERM$与算法$IERM$的执行时间之比，
 从表中可以看出，随着图规模的增大，
-时间比也越来越大，
-这是因为算法$IERM$的程序时间相对复杂，
+时间比也越来越大。
+当顶点数为$10$时，算法$IERM$的运行时间明显少于算法$FERM$。
+由于算法$IERM$的程序实现相对复杂，
 导致常数级处理较多，
 所以当数据规模较少时效率不容易体现出来。
 
@@ -218,10 +311,10 @@ $K_{10}$ &100000000 &671.767 &521.091 &1.3 &0.990147\\
 \label{ex:4.2}
 为了验证顶点数和边数对算法的影响，
 我们将边的权值控制在$1$到$100$之间。
-图$~\ref{fig4.1}$为算法$FERM$和$IERM$在不同顶点数下的时间对比图。
+图$\,\ref{fig4.1}$为算法$FERM$和$IERM$在不同顶点数下的时间对比图。
 \end{experiment}
 
-从图$~\ref{fig4.1}$可以得出算法$IERM$的时间复杂度与顶点数无关，
+从图$\,\ref{fig4.2}$可以得出算法$IERM$的时间复杂度与顶点数无关，
 这也验证了我们在第三章对并查集优化算法的理论分析。
 从图中还可以看出，
 这两个算法的运行时间都会随着边数的增多而增大。
@@ -229,31 +322,31 @@ $K_{10}$ &100000000 &671.767 &521.091 &1.3 &0.990147\\
 \begin{figure*}[!htb]
 \centering
 \subfigure[$n = 100$]{
-    \label{fig4.1:subfiga}
+    \label{fig4.2:subfiga}
     \begin{minipage}[t]{\figwidth}
     \centering
-    \includegraphics[width=\figwidth]{Fig4-1a}
+    \includegraphics[width=\figwidth]{Fig4-2a}
     \end{minipage}}
 \subfigure[$n = 200$]{
-    \label{fig4.1:subfigb}
+    \label{fig4.2:subfigb}
     \begin{minipage}[t]{\figwidth}
     \centering
-    \includegraphics[width=\figwidth]{Fig4-1b}
+    \includegraphics[width=\figwidth]{Fig4-2b}
     \end{minipage}}
 \subfigure[$n = 300$]{
-    \label{fig4.1:subfigc}
+    \label{fig4.2:subfigc}
     \begin{minipage}[t]{\figwidth}
     \centering
-    \includegraphics[width=\figwidth]{Fig4-1c}
+    \includegraphics[width=\figwidth]{Fig4-2c}
     \end{minipage}}
 \subfigure[$n = 400$]{
-    \label{fig4.1:subfigd}
+    \label{fig4.2:subfigd}
     \begin{minipage}[t]{\figwidth}
     \centering
-    \includegraphics[width=\figwidth]{Fig4-1d}
+    \includegraphics[width=\figwidth]{Fig4-2d}
     \end{minipage}}
 \caption{顶点数变化时算法的执行效率对比}
-\label{fig4.1}
+\label{fig4.2}
 \end{figure*}
 
 \section{本章小结}

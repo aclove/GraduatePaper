@@ -49,7 +49,7 @@ $P = \{p(e) \,|\,  e \in E, p(e) \in (0, 1]\}$是边存在可能性的集合。
 边上的两个数字分别代表权值和概率，
 由于该不确定图有五条可能出现的边，因此该不确定图有$2^5$个蕴含图。
 图$\,\ref{fig2.1}(b)$为不确定图$\mathcal{G}_{1}$的一个蕴含图，
-显然该蕴含图存在的概率为$p(e_2)\times p(e_3)\times p(e_4)\times p(e_5)\times (1-p(e_1)))= 0.03528$。
+显然该蕴含图存在的概率为$p(e_2)\times p(e_3)\times p(e_4)\times p(e_5)\times (1-p(e_1))= 0.03528$。
 \end{example}
 
 \begin{figure}[htb]
@@ -130,10 +130,10 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 \label{def:2.1.4}
 设不确定图$\mathcal{G}=(V,E,W,P)$，若生成树$T$满足$\forall T'(\prod_{e \in E_T} P(e) \le \prod_{e' \in E_{T'}}P(e'))$，
 则称$T$为不确定图$\mathcal{G}$的最小乘积生成树，记编号最小的最小乘积生成树为$T_{PL}^{\mathcal{G}}$，
-其边集为$E_{PL}^{\mathcal{G}}$，边的权值和为$W_{PL}^{\mathcal{G}}$。
+其边集为$E_{PL}^{\mathcal{G}}$，边的概率乘积为$P_{PL}^{\mathcal{G}}$。
 若生成树$T$满足$\forall T'(\prod_{e \in E_T} P(e) \ge \prod_{e' \in E_{T'}}P(e'))$，
 则称$T$为不确定图$\mathcal{G}$的最大乘积生成树，记编号最小的最大乘积生成树为$T_{PB}^{\mathcal{G}}$，
-其边集为$E_{PB}^{\mathcal{G}}$，边的权值和为$W_{PB}^{\mathcal{G}}$
+其边集为$E_{PB}^{\mathcal{G}}$，边的概率乘积为$P_{PB}^{\mathcal{G}}$
 \end{definition}
 
 \begin{definition}[最优生成树]
@@ -141,7 +141,7 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 设$Imp(\mathcal{T})$为不确定图$\mathcal{G}$中所有最小生成树的集合，
 若最小生成树$T$满足$\forall T' \in Imp(\mathcal{T})(R_{T'} \le R_T)$，
 则称$T$为不确定图$\mathcal{G}$的最优生成树。记编号最小的最优生成树为$T_O^{\mathcal{G}}$，
-其边集为$E_O^{\mathcal{G}}$，边的权值和为$W_O^{\mathcal{G}}$。
+其边集为$E_O^{\mathcal{G}}$，边的权值和为$W_O^{\mathcal{G}}$，边的概率乘积为$P_O^{\mathcal{G}}$。
 \end{definition}
 
 显然，最优生成树也不是唯一的，我们也可以将最优生成树看作不确定图中的最小生成树中的最大乘积生成树。
@@ -151,9 +151,9 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 
 \begin{theorem}
 \label{trm:2.2.1}
-设不确定图$\mathcal{G}=(V,E,W,P)$和$\mathcal{G}'=(V,E,W,P')$，
-若两个不确定图满足$\forall e \in E (P'(e) = \log_2 (P(e)))$，
-则$W_{PL}^{\mathcal{G}} = 2^{W_M^{\mathcal{G}'}}$。
+设不确定图$\mathcal{G}=(V,E,W,P)$和$\mathcal{G}'=(V,E,W',P')$，
+若两个不确定图满足$\forall e \in E (W'(e) = \log_2 (P(e)))$，
+则$P_{PL}^{\mathcal{G}} = 2^{W_M^{\mathcal{G}'}}$。
 \end{theorem}
 
 \begin{proof}
@@ -163,10 +163,10 @@ $(\sum_{e \in E_T} W(e) \le \sum_{e' \in E_{T'}}W(e'))$，
 \begin{equation}
 \label{eq:2.4}
 \nonumber
-\sum_{e \in E_T}P'(e) = \log_2 \prod_{e \in E_T}P(e)
+\sum_{e \in E_T}W'(e) = \log_2 \prod_{e \in E_T}P(e)
 \end{equation}
 显然生成树$T$在$\mathcal{G}'$中的边权和与在$\mathcal{G}$中边权的乘积成正比，
-当$T$为$\mathcal{G}'$的最小生成树时，则有$W_M^{\mathcal{G}'} = \log_2 W_{PL}^{\mathcal{G}}$，即$W_{PL}^{\mathcal{G}} = 2^{W_M^{\mathcal{G}'}}$。
+当$T$为$\mathcal{G}'$的最小生成树时，则有$W_M^{\mathcal{G}'} = \log_2 P_{PL}^{\mathcal{G}}$，即$P_{PL}^{\mathcal{G}} = 2^{W_M^{\mathcal{G}'}}$。
 \end{proof}
 
 由定理\,\ref{trm:2.2.1}可知，要想求得最小乘积生成树，

@@ -9,10 +9,14 @@ The style file: paper.bst
 &gt; is an unknown function---line 764 of file paper.bst
 &lt; is an unknown function---line 766 of file paper.bst
 Database file #1: paper.bib
-Repeated entry---line 195 of file paper.bib
+Repeated entry---line 267 of file paper.bib
  : @article{zou2010mining
  :                       ,
 I'm skipping whatever remains of this entry
+1 is an integer literal, not a string or missing field, for entry barnett2005early
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry barnett2005early
+while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry jensen2009string
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry jensen2009string
@@ -28,6 +32,36 @@ while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry sohraby2007wireless
 while executing---line 1153 of file paper.bst
 Warning--empty address in sohraby2007wireless
+1 is an integer literal, not a string or missing field, for entry adar2007managing
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry adar2007managing
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry kempe2003maximizing
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry kempe2003maximizing
+while executing---line 1153 of file paper.bst
+Warning--empty address in kempe2003maximizing
+Warning--empty month in kempe2003maximizing
+8 is an integer literal, not a string, for entry kempe2003maximizing
+while executing---line 1153 of file paper.bst
+Warning--empty publisher in kempe2003maximizing
+ptr=1, stack=
+{\em Proceedings of the ninth ACM SIGKDD international conference on Knowledge discovery and data mining}, 
+---the literal stack isn't empty for entry kempe2003maximizing
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry guha2004propagation
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry guha2004propagation
+while executing---line 1153 of file paper.bst
+Warning--empty address in guha2004propagation
+Warning--empty month in guha2004propagation
+8 is an integer literal, not a string, for entry guha2004propagation
+while executing---line 1153 of file paper.bst
+Warning--empty publisher in guha2004propagation
+ptr=1, stack=
+{\em Proceedings of the 13th international conference on World Wide Web}, 
+---the literal stack isn't empty for entry guha2004propagation
+while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry bader2003gaining
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry bader2003gaining
@@ -123,6 +157,10 @@ ptr=1, stack=
 {\em Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining}, 
 ---the literal stack isn't empty for entry huan2004spin
 while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry koyuturk2004efficient
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry koyuturk2004efficient
+while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry zou2009frequent
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry zou2009frequent
@@ -143,6 +181,19 @@ while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry zou2010mining
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry zou2010mining
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry papapetrou2011efficient
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry papapetrou2011efficient
+while executing---line 1153 of file paper.bst
+Warning--empty address in papapetrou2011efficient
+Warning--empty month in papapetrou2011efficient
+8 is an integer literal, not a string, for entry papapetrou2011efficient
+while executing---line 1153 of file paper.bst
+Warning--empty publisher in papapetrou2011efficient
+ptr=1, stack=
+{\em Proceedings of the 14th International Conference on Extending Database Technology}, 
+---the literal stack isn't empty for entry papapetrou2011efficient
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry zou2010discovering
 while executing---line 1153 of file paper.bst
@@ -190,6 +241,14 @@ while executing---line 1153 of file paper.bst
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry potamias2010k
 while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry ljh2013cluster
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry ljh2013cluster
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry dr2012cluster
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry dr2012cluster
+while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry jeh2002simrank
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry jeh2002simrank
@@ -202,14 +261,6 @@ Warning--empty publisher in jeh2002simrank
 ptr=1, stack=
 {\em Proceedings of the eighth ACM SIGKDD international conference on Knowledge discovery and data mining}, 
 ---the literal stack isn't empty for entry jeh2002simrank
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry ljh2013cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry ljh2013cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry dr2012cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry dr2012cluster
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry yuan2010efficiently
 while executing---line 1153 of file paper.bst
@@ -224,6 +275,17 @@ ptr=1, stack=
 {\em Database Systems for Advanced Applications}, 
 ---the literal stack isn't empty for entry yuan2010efficiently
 while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry zou2011top
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry zou2011top
+while executing---line 1153 of file paper.bst
+6 is an integer literal, not a string, for entry zou2011top
+while executing---line 1153 of file paper.bst
+Warning--empty address in zou2011top
+ptr=1, stack=
+{\em Web Information System Engineering--WISE 2011}, 
+---the literal stack isn't empty for entry zou2011top
+while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry lmp2012shortest
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry lmp2012shortest
@@ -236,6 +298,18 @@ while executing---line 1153 of file paper.bst
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry zbl2014maxflow
 while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry tangreliability
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry tangreliability
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry zhangsuo2009
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry zhangsuo2009
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string or missing field, for entry liuqiang2011
+while executing---line 1153 of file paper.bst
+1 is an integer literal, not a string, for entry liuqiang2011
+while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string or missing field, for entry zhanghj2011topk
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry zhanghj2011topk
@@ -244,12 +318,12 @@ while executing---line 1153 of file paper.bst
 while executing---line 1153 of file paper.bst
 1 is an integer literal, not a string, for entry kelly1957congruence
 while executing---line 1153 of file paper.bst
-2 is an integer literal, not a string or missing field, for entry chu1965shortest
+1 is an integer literal, not a string or missing field, for entry chu1965shortest
 while executing---line 1153 of file paper.bst
-2 is an integer literal, not a string, for entry chu1965shortest
+1 is an integer literal, not a string, for entry chu1965shortest
 while executing---line 1153 of file paper.bst
-4 is an integer literal, not a string or missing field, for entry gabow1986efficient
+1 is an integer literal, not a string or missing field, for entry gabow1986efficient
 while executing---line 1153 of file paper.bst
-4 is an integer literal, not a string, for entry gabow1986efficient
+1 is an integer literal, not a string, for entry gabow1986efficient
 while executing---line 1153 of file paper.bst
-(There were 102 error messages)
+(There were 130 error messages)

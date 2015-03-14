@@ -1,12 +1,17 @@
 \begin{thebibliography}{99}
 
+\bibitem{barnett2005early}
+Barnett, Janet Heine (2005).
+\newblock Early writings on graph theory: Euler circuits and the k{\"o}nigsberg
+  bridge problem.
+
 \bibitem{jensen2009string}
-JENSEN L J, KUHN M, STARK M, et al. (2009) String 8-a global view on proteins
+JENSEN LJ, KUHN M, STARK M, et al. (2009) String 8-a global view on proteins
   and their functional interactions in 630 organisms.
 \newblock {\em Nucleic acids research}, {\bf  37}, 412--416.
 
 \bibitem{ceol2009mint}
-CEOL A, ARYAMONTRI A C, LICATA L, et al. (2009) Mint, the molecular interaction
+CEOL A, ARYAMONTRI AC, LICATA L, et al. (2009) Mint, the molecular interaction
   database: 2009 update.
 \newblock {\em Nucleic acids research}, {\bf  38}, 532--541.
 
@@ -18,13 +23,26 @@ CEOL A, ARYAMONTRI A C, LICATA L, et al. (2009) Mint, the molecular interaction
 SOHRABY K, MINOLI D, ZNATI T. (2007) {\em Wireless sensor networks: technology,
   protocols, and applications}. John Wiley \& Sons.
 
+\bibitem{adar2007managing}
+Adar E, R{\'e} C. (2007) Managing uncertainty in social networks.
+\newblock {\em IEEE Data Eng. Bull.}, {\bf  30}, 15--22.
+
+\bibitem{kempe2003maximizing}
+Kempe D, Kleinberg J, Tardos, et al. (2003) Maximizing the spread of influence
+  through a social network.
+\newblock pp. 137--146. ACM.
+
+\bibitem{guha2004propagation}
+Guha R, Kumar R, Raghavan, et al. (2004) Propagation of trust and distrust.
+\newblock pp. 403--412. ACM.
+
 \bibitem{bader2003gaining}
-BADER J S, CHAUDHURI A, ROTHBERG J M, et al. (2003) Gaining confidence in
+BADER JS, CHAUDHURI A, ROTHBERG JM, et al. (2003) Gaining confidence in
   high-throughput protein interaction networks.
 \newblock {\em Nature biotechnology}, {\bf  22}, 78--85.
 
 \bibitem{asthana2004predicting}
-ASTHANA S, KING O D, GIBBONS F D, et al. (2004) Predicting protein complex
+ASTHANA S, KING OD, GIBBONS FD, et al. (2004) Predicting protein complex
   membership using probabilistic network reliability.
 \newblock {\em Genome research}, {\bf  14}, 1170--1175.
 
@@ -40,7 +58,7 @@ JIANG R, TU Z, CHEN T, et al. (2006) Network motif identification in stochastic
   9404--9409.
 
 \bibitem{ghosh2007routing}
-GHOSH J, NGO H Q, YOON S, et al. (2007) On a routing problem within
+GHOSH J, NGO HQ, YOON S, et al. (2007) On a routing problem within
   probabilistic graphs and its application to intermittently connected
   networks.
 \newblock pp. 1721--1729. IEEE.
@@ -52,18 +70,18 @@ LIU Y, HE Y, LI M, et al. (2013) Does wireless sensor network scale? a
   24}, 1983--1993.
 
 \bibitem{muruganathan2005centralized}
-MURUGANATHAN S D, MA D C F, BHASIN R I, et al. (2005) A centralized
+MURUGANATHAN SD, MA DCF, BHASIN RI, et al. (2005) A centralized
   energy-efficient routing protocol for wireless sensor networks.
 \newblock {\em Communications Magazine, IEEE}, {\bf  43}, 8--13.
 
 \bibitem{cook2006mining}
-COOK D J, HOLDER L B. (2006) {\em Mining graph data}. John Wiley \& Sons.
+COOK DJ, HOLDER LB. (2006) {\em Mining graph data}. John Wiley \& Sons.
 
 \bibitem{aggarwal2010managing}
-AGGARWAL C C, WANG H. (2010) {\em Managing and mining graph data}. Springer.
+AGGARWAL CC, WANG H. (2010) {\em Managing and mining graph data}. Springer.
 
 \bibitem{borgelt2002mining}
-BORGELT C, BERTHOLD M R. (2002) Mining molecular fragments: Finding relevant
+BORGELT C, BERTHOLD MR. (2002) Mining molecular fragments: Finding relevant
   substructures of molecules.
 \newblock pp. 51--58. IEEE.
 
@@ -80,6 +98,11 @@ HUAN J, WANG W, PRINS J, et al. (2004) Spin: mining maximal frequent subgraphs
   from graph databases.
 \newblock pp. 581--586. ACM.
 
+\bibitem{koyuturk2004efficient}
+Koyut{\"u}rk M, Grama A, Szpankowski, et al. (2004) An efficient algorithm for
+  detecting frequent subgraphs in biological networks.
+\newblock {\em Bioinformatics}, {\bf  20}, 200--207.
+
 \bibitem{zou2009frequent}
 ZOU Z, LI J, GAO H, et al. (2009) Frequent subgraph pattern mining on uncertain
   graph data.
@@ -95,13 +118,18 @@ ZOU Z, LI J, GAO H, et al. (2010) Mining frequent subgraph patterns from
 \newblock {\em Knowledge and Data Engineering, IEEE Transactions on}, {\bf
   22}, 1203--1218.
 
+\bibitem{papapetrou2011efficient}
+Papapetrou O, Ioannou E, Skoutas, et al. (2011) Efficient discovery of frequent
+  subgraph patterns in uncertain graph databases.
+\newblock pp. 355--366. ACM.
+
 \bibitem{zou2010discovering}
-ZOU Z, GAO H, LI J. (2010) Discovering frequent subgraphs over uncertain graph
-  databases under probabilistic semantics.
+Zou Z, Gao H, Li J, et al. (2010) Discovering frequent subgraphs over uncertain
+  graph databases under probabilistic semantics.
 \newblock pp. 633--642. ACM.
 
 \bibitem{li2012mining}
-LI J, ZOU Z, GAO H. (2012) Mining frequent subgraphs over uncertain graph
+Li J, Zou Z, Gao H. (2012) Mining frequent subgraphs over uncertain graph
   databases under probabilistic semantics.
 \newblock {\em The VLDB Journal}, {\bf  21}, 753--777.
 
@@ -127,10 +155,6 @@ POTAMIAS M, BONCHI F, GIONIS A, et al. (2010) K-nearest neighbors in uncertain
   graphs.
 \newblock {\em Proceedings of the VLDB Endowment}, {\bf  3}, 997--1008.
 
-\bibitem{jeh2002simrank}
-JEH G, WIDOM J. (2002) Simrank: a measure of structural-context similarity.
-\newblock pp. 538--543. ACM.
-
 \bibitem{ljh2013cluster}
 李俊辉. (2013) 基于不确定图的层次聚类算法研究.
 \newblock {\em 中国管理信息化}, {\bf  15}, 79--80.
@@ -139,10 +163,19 @@ JEH G, WIDOM J. (2002) Simrank: a measure of structural-context similarity.
 丁悦. (2012) 不确定图聚类分析研究.
 \newblock Master's thesis. 西北农林科技大学.
 
+\bibitem{jeh2002simrank}
+JEH G, WIDOM J. (2002) Simrank: a measure of structural-context similarity.
+\newblock pp. 538--543. ACM.
+
 \bibitem{yuan2010efficiently}
 YUAN Y, CHEN L, WANG G. (2010) Efficiently answering probability
   threshold-based shortest path queries over uncertain graphs.
 \newblock pp. 155--170. Springer.
+
+\bibitem{zou2011top}
+Zou L, Peng P, Zhao, D, et al. (2011) Top-k possible shortest path query over a
+  large uncertain graph.
+\newblock pp. 72--86. Springer.
 
 \bibitem{lmp2012shortest}
 李鸣鹏，邹兆年，高宏等. (2012) 不确定图上期望最短距离的计算.
@@ -156,23 +189,34 @@ YUAN Y, CHEN L, WANG G. (2010) Efficiently answering probability
 张柏礼，吕建华，生衍等. (2014) 一种不确定图中最可靠最大流问题的解决方案.
 \newblock {\em 计算机学报}, {\bf  10}, 2084--2095.
 
+\bibitem{tangreliability}
+Tang J, Liu Y, Wen Z. (2015) Reliability evaluation of the minimum spanning
+  tree on uncertain graph.
+\newblock {\em Journal of Computers}, {\bf  1}, 12--24.
+
+\bibitem{zhangsuo2009}
+张硕，高宏，李建中. (2009) 不确定图数据库中高效查询处理.
+\newblock {\em 计算机学报}, {\bf  32}, 2066--2079.
+
+\bibitem{liuqiang2011}
+刘强，殷建平，蔡志平. (2011) 基于不确定图的网络漏洞分析方法.
+\newblock {\em 软件学报}, {\bf  22}, 1398--1412.
+
 \bibitem{zhanghj2011topk}
 张海杰, 姜守旭, 邹兆年. (2011) 不确定图上的高效top-k近邻查询处理算法.
 \newblock {\em 计算机学报}, {\bf  34}, 1885--1896.
 
 \bibitem{kelly1957congruence}
-KELLY P J. (1957) A congruence theorem for trees.
+KELLY PJ. (1957) A congruence theorem for trees.
 \newblock {\em Pacific J. Math}, {\bf  7}, 961--968.
 
 \bibitem{chu1965shortest}
-Chu, Yoeng-Jin and Liu, Tseng-Hong. (1965) On shortest arborescence of a
-  directed graph.
+Chu Y, Liu T. (1965) On shortest arborescence of a directed graph.
 \newblock {\em Scientia Sinica}, {\bf  14}, 1396.
 
 \bibitem{gabow1986efficient}
-Gabow, Harold N and Galil, Zvi and Spencer, Thomas and Tarjan, et al. (1986)
-  Efficient algorithms for finding minimum spanning trees in undirected and
-  directed graphs.
+Gabow H, Galil Z, Spencer T, et al. (1986) Efficient algorithms for finding
+  minimum spanning trees in undirected and directed graphs.
 \newblock {\em Combinatorica}, {\bf  6}, 109--122.
 
 \end{thebibliography}

@@ -74,6 +74,53 @@ MURUGANATHAN SD, MA DCF, BHASIN RI, et al. (2005) A centralized
   energy-efficient routing protocol for wireless sensor networks.
 \newblock {\em Communications Magazine, IEEE}, {\bf  43}, 8--13.
 
+\bibitem{wang2006realistic}
+Wang Q, Hempstead M, Yang W. (2006) A realistic power consumption model for
+  wireless sensor network devices.
+\newblock pp. 286--295. IEEE.
+
+\bibitem{wei2011energy}
+Wei D, Jin Y, Vural S, et al. (2011) An energy-efficient clustering solution
+  for wireless sensor networks.
+\newblock {\em Wireless Communications, IEEE Transactions on}, {\bf  10},
+  3973--3983.
+
+\bibitem{liu2014uncertain}
+Liu B. (2014) Uncertain random graph and uncertain random network.
+\newblock {\em Journal of Uncertain Systems}, {\bf  8}, 3--12.
+
+\bibitem{gao2013connectedness}
+Gao X, Gao Y. (2013) Connectedness index of uncertain graph.
+\newblock {\em International Journal of Uncertainty, Fuzziness and
+  Knowledge-Based Systems}, {\bf  21}, 127--137.
+
+\bibitem{zhang2012euler}
+Zhang B, Peng J. (2012) Euler index in uncertain graph.
+\newblock {\em Applied Mathematics and Computation}, {\bf  218}, 10279--10288.
+
+\bibitem{chen2010continuous}
+Chen L, Wang C. (2010) Continuous subgraph pattern search over certain and
+  uncertain graph streams.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on}, {\bf
+  22}, 1093--1109.
+
+\bibitem{zhao2014detecting}
+Zhao B, Wang J, Li M, et al. (2014) Detecting protein complexes based on
+  uncertain graph model.
+\newblock {\em IEEE/ACM Transactions on Computational Biology and
+  Bioinformatics (TCBB)}, {\bf  11}, 486--497.
+
+\bibitem{yuan2013efficient}
+Yuan Y, Wang G, Chen L, et al. (2013) Efficient keyword search on uncertain
+  graph data.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on}, {\bf
+  25}, 2767--2779.
+
+\bibitem{jin2011discovering}
+Jin R, Liu L, Aggarwal C. (2011) Discovering highly reliable subgraphs in
+  uncertain graphs.
+\newblock pp. 992--1000. ACM.
+
 \bibitem{cook2006mining}
 COOK DJ, HOLDER LB. (2006) {\em Mining graph data}. John Wiley \& Sons.
 
@@ -141,6 +188,32 @@ ZOU Z, LI J, GAO H, et al. (2010) Finding top-k maximal cliques in an uncertain
 \bibitem{zou2013largetopk}
 邹兆年，朱镕. (2013) 大规模不确定图上的top-k极大团挖掘算法.
 \newblock {\em 计算机学报}, {\bf  36}, 2146--2155.
+
+\bibitem{andersen2006local}
+Andersen R, Chung F, Lang K. (2006) Local graph partitioning using pagerank
+  vectors.
+\newblock pp. 475--486. IEEE.
+
+\bibitem{abou2006multilevel}
+Abou-Rjeili A, Karypis G. (2006) Multilevel algorithms for partitioning
+  power-law graphs.
+\newblock pp. 10--pp. IEEE.
+
+\bibitem{xu2007scan}
+Xu X, Yuruk N, Feng Z, et al. (2007) Scan: a structural clustering algorithm
+  for networks.
+\newblock pp. 824--833. ACM.
+
+\bibitem{macropol2010scalable}
+Macropol K, Singh A. (2010) Scalable discovery of best clusters on large
+  graphs.
+\newblock {\em Proceedings of the VLDB Endowment}, {\bf  3}, 693--702.
+
+\bibitem{cheng2011clustering}
+Cheng H, Zhou Y, Yu J. (2011) Clustering large attributed graphs: A balance
+  between structural and attribute similarities.
+\newblock {\em ACM Transactions on Knowledge Discovery from Data (TKDD)}, {\bf
+  5}, 12.
 
 \bibitem{zhang2011knn}
 张应龙，李翠平，陈红等. (2011) 不确定图上的 knn 查询处理.

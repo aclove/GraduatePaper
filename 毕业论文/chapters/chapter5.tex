@@ -2,7 +2,7 @@
 %=======第五章=================================
 \newpage
 
-\chapter{不确定图中最优树形图的扩展研究}
+\chapter{不确定图的扩展研究}
 \vskip 0.3cm
 
 \section{问题定义}
@@ -174,12 +174,12 @@ $n$和$m$分别为不确定有向图的顶点数和边数。
 且边的权值为原图中最大的权值加一，
 最后在得到的最优树形图中删除新增的顶点即可。
 
-\section{TOP-K最优树形图算法}
+\section{TOP-K最小树形图算法}
 
-在第三章中，介绍了TOP-K最优生成树算法，
+在第三章中，介绍了TOP-K最小生成树算法，
 我们主要使用了边集划分的思想来求一个新的最优生成树，
 显然，该方法对于不确定有向图也同样适用，
-最容易想到的TOP-K最优树形图算法则是在边集划分之后，
+最容易想到的TOP-K最小树形图算法则是在边集划分之后，
 每次都使用上一节介绍的最优树形图算法获得一颗最优树形图,
 这样，算法的时间复杂度则为$O(Nn^2m)$，
 其中$N$为最优树形图的个数，
@@ -219,7 +219,7 @@ $n$和$m$分别为不确定有向图的顶点数和边数。
 因此我们选择的替换边$e'=(u',v')$必然满足$v'=v$，
 即边的终点始终指向顶点$v$。
 
-算法$\,\ref{alg:top-kotg}$为TOP-K最优树形图算法，
+算法$\,\ref{alg:top-kotg}$为TOP-K最小树形图算法，
 该算法在求解替换边时，
 也只需要遍历不确定有向图，
 然后找到具有相同终点和权值的边即可，
@@ -229,12 +229,12 @@ $n$和$m$分别为不确定有向图的顶点数和边数。
 若使用优先队列优化，则时间复杂度为$O(KmlogN)$。
 
 \begin{algorithm}[htb]
-\caption{TOP-K最优树形图算法}
+\caption{TOP-K最小树形图算法}
 \label{alg:top-kotg}
 \begin{algorithmic}[1]
 \Statex
 \setcounter{ALG@line}{0}
-\Algphase{\textbf{模块1：}TOP-K最优树形图算法}
+\Algphase{\textbf{模块1：}TOP-K最小树形图算法}
 \Procedure{TopKOTG}{$K, \vec{\mathcal{G}}$} \Comment $\vec{\mathcal{G}}=(V,\vec{E},W,P)$
 \State $\vec{E}_{\vec{T}} \gets \Call{OTG}{\vec{\mathcal{G}}}$
 \State $MTGSet = \Call{FindAllMTG}{\emptyset, \emptyset, \vec{E}_{\vec{T}}, \vec{\mathcal{G}}}$
@@ -260,3 +260,8 @@ $n$和$m$分别为不确定有向图的顶点数和边数。
 \end{algorithm}
 
 \section{本章小结}
+
+本章主要是对不确定图进行了扩展，
+我们对基于有向边的不确定图进行了研究，
+将最优树形图定义为不确定有向图中的最优生成树，
+并提出了最优树形图算法和TOP-K最小树形图算法。

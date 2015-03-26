@@ -39,7 +39,7 @@
 
 \end{enumerate}
 
-最后，我们对不确定图中最优生成树的研究进行了相关的实验验证，
+最后，我们对不确定图中生成树的研究进行了相关的实验验证，
 实验结果表明，设计的算法的运行效率与理论分析基本一致，
 且能够完全正确的得到问题的解。
 
@@ -52,6 +52,38 @@
 \addcontentsline{toc}{chapter}{Abstract}
 \setlength{\baselineskip}{19pt plus2pt minus1pt} % 调整自然行距
 
+Graph theory that is a branch of mathematics plays an important role in computer science.
+Many problems can be transformed into graph model,
+we can obtain the solution of the problem using graph algorithms by computer.
+With the time for the era of big data,
+the scale of graph data will be more and more,
+so the efficiency of graph algorithms is very important to solve graph problems.
+
+We may encounter many unexpected situations in practical problems,
+for example, machine fault and instability of signal transmission,
+in the end, the actual data will be uncertain,
+so the uncertain graph has become a very popular field of study.
+In this paper, we research the spanning tree algorithms on uncertain graph,
+the main content is divided into the following four parts:
+
+\begin{enumerate}[(1)]
+\item Because the edge on uncertain graph exists uncertainty,
+the definition of classic minimum spanning tree can not be apply to uncertain graph,
+so we put forward the concept of optimal spanning tree.
+it's mainly to add an optimized definition of the probability based on the definition of the minimum spanning tree, then, we use the greedy idea and design the optimal spanning tree algorithm on uncertain graph.
+\item In order to find the top-k optimal MST on uncertain graph,
+we designed the top-k minimum spanning tree algorithm
+and proposed two optimized algorithms based on disjoint-set and heuristic search respectively.
+When the K value is small, the algorithm based on heuristic search is better than the algorithm based on disjoint-set.
+At last, we analyze the reliability of the minimum spanning tree on uncertain graph.
+\item In uncertain graph, we put forward the definition of the optimal arborescence,
+and design an optimal arborescence algorithm based on Liu-Zhu algorithm.
+At last, we combine with the idea of the top-k minimum spanning tree algorithm and the property of the optimal arborescence and design top-k optimal arborescence query algorithm.
+\end{enumerate}
+
+Finally, we carry out experiments to verify our researches in spanning tree on uncertain graph,
+the experiment results show that the efficiency of designed algorithm agrees with theoretical analysis,
+and get exactly the solution of the problems.
 \vskip 0.2cm
 \noindent{\bf Key words:} uncertain graph, implicated graph, minimum spanning tree, optimized spanning tree, optimized arborescence.
 \setlength{\baselineskip}{20pt plus2pt minus1pt} % 调整自然行距 

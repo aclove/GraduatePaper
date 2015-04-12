@@ -9,10 +9,18 @@
 
 \begin{definition}[不确定有向图]
 \label{def:5.1.1}
-不确定有向图是一个四元组$\vec{\mathcal{G}} = (V, \vec{E}, W, P)$，
-其中$V$是顶点集，$\vec{E}$是有向边集，
-$W = \{w(e) \,|\,  e \in \vec{E}, w(e) \in  \mathbb{N}^{+} \}$是边的权重集，
-$P = \{p(e) \,|\,  e \in \vec{E}, p(e) \in (0, 1]\}$是边存在可能性的集合。
+不确定有向图是一个四元组
+\begin{equation}
+\nonumber
+\vec{\mathcal{G}} = (V, \vec{E}, W, P)
+\end{equation}
+其中
+\\$\indent (1)V$是顶点集；
+\\$\indent (2)\vec{E}$是有向边集，
+\\$\indent (3)W = \{w(e) \,|\,  e \in \vec{E}, w(e) \in  \mathbb{N}^{+} \}$是边的权重集；
+\\$\indent (4)P = \{p(e) \,|\,  e \in \vec{E}, p(e) \in (0, 1]\}$是边存在可能性的集合。
+它给每条边$e=(u,v) \in E$赋予一个条件存在概率值$p(e) \in (0,1]$，
+用于表示$e$实际存在的概率。
 \end{definition}
 
 \begin{definition}[最优树形图]
@@ -193,6 +201,8 @@ $n$和$m$分别为不确定有向图的顶点数和边数。
 然而这个思想在不确定有向图中同样适用，
 而且应用在最优树形图中会更加简单。
 
+\subsection{问题求解}
+
 \begin{theorem}
 \label{trm:5.3.1}
 设$\vec{T}$为不确定有向图$\vec{\mathcal{G}}$中的最小树形图，
@@ -258,6 +268,15 @@ $n$和$m$分别为不确定有向图的顶点数和边数。
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
+
+\subsection{算法优化}
+在前面我们已经提到，
+若边$e'=(u',v')$为边$e=(u,v)$的替换边，
+则必然满足$v'=v$且$w(e')=w(e)$。
+因此，在求边替换操作时，
+我们只需要扫描与顶点$v$相连且边权值为$w(e)$的边，
+当具有相同边权的边数目较少时，
+可以大大提高算法运行的效率。
 
 \section{本章小结}
 

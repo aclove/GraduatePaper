@@ -5,11 +5,41 @@
 \chapter{不确定图中Top-K最小生成树算法}
 \vskip 0.3cm
 
-\section{问题描述}
-在不确定图中，可能存在许多不同的最小生成树，
-由于边集的不同，他们的边概率乘积也会不同。
-在这一章中，我们设计算法目的是求得前$K$个边概率乘积最大的最小生成树，
-显然该算法也能获得所有的最优生成树。
+在实际应用中，如路由网络，传感器网络等，
+需要知道哪些线路是关键线路，
+即当线路出现故障时，
+很难找到可替换的线路，
+使得最后的解决方案还是最优的。
+一种评判线路关键性的方法就是先求得TOP-K最小生成树，
+然后计算每条线路在这$K$颗最小生成树中出现的频率，
+频率越高说明该线路的重要性越高。
+当然，对K值的选取也会影响到最终的结果，
+$K$值的过大或过小会导致结果出现很大的误差。
+一种较好的方法就是选择的$K$颗最小生成树恰好是不确定图的所有最优生成树。
+当一条线路在每一课生成树中都出现时，
+我们称该线路是关键线路。
+在这一章中，我们的主要目的是求得前$K$个边概率乘积最大的最小生成树，
+也称之为TOP-K最小生成树。
+
+\section{问题定义}
+\begin{definition}[TOP-K最小生成树]
+\label{def:3.2.1}
+设不确定图$\mathcal{G}=(V,E,W,P)$，
+$T_1,T_2,\cdots, T_N$
+\\为不确定图$\mathcal{G}$的最小生成树，
+其中$N$为不确定图$\mathcal{G}$中最小生成树的个数且满足$R_{T_1} \ge R_{T_2} \ge ,\cdots, \ge R_{T_N}$。
+则我们称$T_1,T_2, \cdots, T_K$为不确定图$\mathcal{G}$的TOP-K最小生成树，
+其中$K \le N$。
+\end{definition}
+
+\begin{definition}[关键边]
+\label{def:3.2.2}
+设不确定图$\mathcal{G}=(V,E,W,P)$，
+$e \in E$。
+若对于任意的最优生成树$T$，
+有$e \in E_T$，
+则称$e$为不确定图$\mathcal{G}$的关键边。
+\end{definition}
 
 \section{基本算法}
 \begin{theorem}
@@ -70,8 +100,8 @@ $D_i\cap D_j = \{G \,|\,  G \in Imp(\mathcal{G})\wedge A_j\subseteq E \wedge e_{
 \begin{lemma}
 \label{lm:3.2.1}
 设$E_T=\{e_1,e_2,\cdots ,e_{n-1}\}$为不确定图$\mathcal{G}=(V,E,W,P)$的任意一颗最小生成树的边集，
-令边集$E_I=\{e_1, e_2, \cdots, e_k\}$为$E_T$的一个子集；
-边集$E_O \subseteq E$且$E_O \cap E_T = \emptyset$；
+我们令边集$E_I=\{e_1, e_2, \cdots, e_k\}$为$E_T$的一个子集，
+边集$E_O \subseteq E$且$E_O \cap E_T = \emptyset$。
 若集合$S =\{G\,|\, G\in Imp(\mathcal{G})\wedge E_I \subseteq {E_G}\wedge E_O\cap {E_G}=\emptyset \}$，
 即集合$S$为包含边集$E_I$中的所有边且不包含边集$E_O$中的所有边的蕴含图集合，
 则我们可以将集合$S$进行如下划分：
@@ -130,14 +160,17 @@ D_{i}= \{G\,|\, G\in S \wedge E_{I_i} \subseteq {E_G}\wedge E_{O_i}\cap {E_G}=\e
 图$\,\ref{fig3.1:subfigb}$为不确定图中主蕴含图的其中一颗最小生成树，
 其中边的权值和为$4$，
 图$\,\ref{fig3.2}$为函数调用$\Call{FindAllMST}{\emptyset, \emptyset, \mathcal{G}}$的全过程，
-我们使用了树形结构来表示，
+我们使用了树形结构来表示函数的整个递归调用，
 节点中左右两边表示传递给被调用函数的参数，
 左边表示可以包含的边的集合，
 右边表示不可以包含的边的集合，
 带有粗边框的节点表示到此为止已经找到了一颗最小生成树，
-这颗生成树的边集为节点左侧的边集，
-粗边框右上角的数字表示这个生成树中所有边的概率乘积。
-显然，最优生成树和次优生成树的边集分别为$\{e_2,e_3,e_5\}$和$\{e_2,e_3,e_6\}$。
+由于此时可以包含的边数为$|V|-1$，
+因此这颗最小生成树的边集即为图中节点左侧列出的边集，
+粗边框右上角的数字表示这个边框对应的最小生成树中所有边的概率乘积。
+从图中显示的数字可以知道，
+最优生成树和次优生成树的边集分别为$\{e_2,e_3,e_5\}$和$\{e_2,e_3,e_6\}$，
+它们的边概率乘积都为$0.504$。
 \label{ex:3}
 \end{example}
 
@@ -588,9 +621,9 @@ $m$为不确定图$\mathcal{G}$中的边数。
 所以算法$\,\ref{alg:top-k3}$非常适合K值较小的情况。
 
 \begin{example}
-图$\,\ref{fig3.6}$为函数$\Call{TopKMST}{9,\mathcal{G}}$的调用过程，
+图$\,\ref{fig3.5}$为函数$\Call{TopKMST}{9,\mathcal{G}}$的调用过程，
 其中参数$\mathcal{G}$为图$\,\ref{fig3.1:subfiga}$中的不确定图。
-在图$\,\ref{fig3.6}$中，
+在图$\,\ref{fig3.5}$中，
 边上的数字代表优先队列的扩展顺序，
 每次都会选择一个边概率乘积最大的最小生成树进行扩展。
 从图中可以看出，任何一个节点对应的最小生成树的边概率乘积都要比其子节点或子孙节点对应的最小生成树的边概率乘积要大，
@@ -600,26 +633,26 @@ $m$为不确定图$\mathcal{G}$中的边数。
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1.3\imagewidth]{Fig3-6}
+\includegraphics[width=1.3\imagewidth]{Fig3-5}
 \caption{例~\ref{ex:6}：
 函数TopKMST($9,\mathcal{G}$)的调用过程。}
-\label{fig3.6}
+\label{fig3.5}
 \end{figure}
 
 \section{实验结果}
 
-图$\,\ref{fig3.5}$为算法$\,\ref{alg:top-k2}$和算法$\,\ref{alg:top-k3}$的运行时间对比，
+图$\,\ref{fig3.6}$为算法$\,\ref{alg:top-k2}$和算法$\,\ref{alg:top-k3}$的运行时间对比，
 该不确定图的顶点数为$34$，边数为$196$，最小生成树的个数为$575624$。
-由图$\,\ref{fig3.5}$可知，当$K$值小于$270000$时，
+由图$\,\ref{fig3.6}$可知，当$K$值小于$270000$时，
 算法$\,\ref{alg:top-k3}$优于算法$\,\ref{alg:top-k2}$。
 由于最小生成树的个数最多为$575624$，
 所以当$K$大于$600000$时，
 算法$\,\ref{alg:top-k3}$的运行时间不再增长。
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=\imagewidth]{Fig3-5}
+\includegraphics[width=\imagewidth]{Fig3-6}
 \caption{并查集优化和启发式搜索优化的实验对比。}
-\label{fig3.5}
+\label{fig3.6}
 \end{figure}
 
 \section{本章小结}

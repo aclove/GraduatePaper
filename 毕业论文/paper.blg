@@ -1,430 +1,112 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: paper.aux
 The style file: paper.bst
-&gt; is an unknown function---line 436 of file paper.bst
-&gt; is an unknown function---line 444 of file paper.bst
-&gt; is an unknown function---line 445 of file paper.bst
-&gt; is an unknown function---line 447 of file paper.bst
-&gt; is an unknown function---line 478 of file paper.bst
-&lt; is an unknown function---line 564 of file paper.bst
-&gt; is an unknown function---line 764 of file paper.bst
-&lt; is an unknown function---line 766 of file paper.bst
 Database file #1: paper.bib
 Repeated entry---line 362 of file paper.bib
  : @article{zou2010mining
  :                       ,
 I'm skipping whatever remains of this entry
-1 is an integer literal, not a string or missing field, for entry barnett2005early
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry barnett2005early
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry jensen2009string
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry jensen2009string
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry ceol2009mint
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry ceol2009mint
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry ljz2003cgq
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry ljz2003cgq
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry sohraby2007wireless
-while executing---line 1153 of file paper.bst
-Warning--empty address in sohraby2007wireless
-1 is an integer literal, not a string or missing field, for entry adar2007managing
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry adar2007managing
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry kempe2003maximizing
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry kempe2003maximizing
-while executing---line 1153 of file paper.bst
-Warning--empty address in kempe2003maximizing
-Warning--empty month in kempe2003maximizing
-8 is an integer literal, not a string, for entry kempe2003maximizing
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in kempe2003maximizing
-ptr=1, stack=
-{\em Proceedings of the ninth ACM SIGKDD international conference on Knowledge discovery and data mining}, 
----the literal stack isn't empty for entry kempe2003maximizing
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry guha2004propagation
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry guha2004propagation
-while executing---line 1153 of file paper.bst
-Warning--empty address in guha2004propagation
-Warning--empty month in guha2004propagation
-8 is an integer literal, not a string, for entry guha2004propagation
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in guha2004propagation
-ptr=1, stack=
-{\em Proceedings of the 13th international conference on World Wide Web}, 
----the literal stack isn't empty for entry guha2004propagation
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry bader2003gaining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry bader2003gaining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry asthana2004predicting
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry asthana2004predicting
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry suthram2006direct
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry suthram2006direct
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry jiang2006network
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry jiang2006network
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry ghosh2007routing
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry ghosh2007routing
-while executing---line 1153 of file paper.bst
-Warning--empty address in ghosh2007routing
-Warning--empty month in ghosh2007routing
-10 is an integer literal, not a string, for entry ghosh2007routing
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in ghosh2007routing
-ptr=1, stack=
-{\em INFOCOM 2007. 26th IEEE International Conference on Computer Communications. IEEE}, 
----the literal stack isn't empty for entry ghosh2007routing
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry liu2013does
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry liu2013does
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry muruganathan2005centralized
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry muruganathan2005centralized
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry wang2006realistic
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry wang2006realistic
-while executing---line 1153 of file paper.bst
-Warning--empty address in wang2006realistic
-Warning--empty month in wang2006realistic
-8 is an integer literal, not a string, for entry wang2006realistic
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in wang2006realistic
-ptr=1, stack=
-{\em Sensor and Ad Hoc Communications and Networks, 2006. SECON'06. 2006 3rd Annual IEEE Communications Society on}, 
----the literal stack isn't empty for entry wang2006realistic
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry wei2011energy
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry wei2011energy
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry liu2014uncertain
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry liu2014uncertain
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry gao2013connectedness
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry gao2013connectedness
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zhang2012euler
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zhang2012euler
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry chen2010continuous
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry chen2010continuous
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zhao2014detecting
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zhao2014detecting
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry yuan2013efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry yuan2013efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry jin2011discovering
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry jin2011discovering
-while executing---line 1153 of file paper.bst
-Warning--empty address in jin2011discovering
-Warning--empty month in jin2011discovering
-9 is an integer literal, not a string, for entry jin2011discovering
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in jin2011discovering
-ptr=1, stack=
-{\em Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining}, 
----the literal stack isn't empty for entry jin2011discovering
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry cook2006mining
-while executing---line 1153 of file paper.bst
-Warning--empty address in cook2006mining
-1 is an integer literal, not a string, for entry aggarwal2010managing
-while executing---line 1153 of file paper.bst
-Warning--empty address in aggarwal2010managing
-1 is an integer literal, not a string or missing field, for entry borgelt2002mining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry borgelt2002mining
-while executing---line 1153 of file paper.bst
-Warning--empty address in borgelt2002mining
-Warning--empty month in borgelt2002mining
-6 is an integer literal, not a string, for entry borgelt2002mining
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in borgelt2002mining
-ptr=1, stack=
-{\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE International Conference on}, 
----the literal stack isn't empty for entry borgelt2002mining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry yan2002gspan
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry yan2002gspan
-while executing---line 1153 of file paper.bst
-Warning--empty address in yan2002gspan
-Warning--empty month in yan2002gspan
-8 is an integer literal, not a string, for entry yan2002gspan
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in yan2002gspan
-ptr=1, stack=
-{\em Data Mining, 2002. ICDM 2003. Proceedings. 2002 IEEE International Conference on}, 
----the literal stack isn't empty for entry yan2002gspan
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry kuramochi2001frequent
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry kuramochi2001frequent
-while executing---line 1153 of file paper.bst
-Warning--empty address in kuramochi2001frequent
-Warning--empty month in kuramochi2001frequent
-8 is an integer literal, not a string, for entry kuramochi2001frequent
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in kuramochi2001frequent
-ptr=1, stack=
-{\em Data Mining, 2001. ICDM 2001, Proceedings IEEE International Conference on}, 
----the literal stack isn't empty for entry kuramochi2001frequent
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry huan2004spin
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry huan2004spin
-while executing---line 1153 of file paper.bst
-Warning--empty address in huan2004spin
-Warning--empty month in huan2004spin
-8 is an integer literal, not a string, for entry huan2004spin
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in huan2004spin
-ptr=1, stack=
-{\em Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining}, 
----the literal stack isn't empty for entry huan2004spin
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry koyuturk2004efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry koyuturk2004efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2009frequent
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2009frequent
-while executing---line 1153 of file paper.bst
-Warning--empty address in zou2009frequent
-Warning--empty month in zou2009frequent
-8 is an integer literal, not a string, for entry zou2009frequent
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in zou2009frequent
-ptr=1, stack=
-{\em Proceedings of the 18th ACM conference on Information and knowledge management}, 
----the literal stack isn't empty for entry zou2009frequent
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2009frequent2
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2009frequent2
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2010mining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2010mining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry papapetrou2011efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry papapetrou2011efficient
-while executing---line 1153 of file paper.bst
-Warning--empty address in papapetrou2011efficient
-Warning--empty month in papapetrou2011efficient
-8 is an integer literal, not a string, for entry papapetrou2011efficient
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in papapetrou2011efficient
-ptr=1, stack=
-{\em Proceedings of the 14th International Conference on Extending Database Technology}, 
----the literal stack isn't empty for entry papapetrou2011efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2010discovering
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2010discovering
-while executing---line 1153 of file paper.bst
-Warning--empty address in zou2010discovering
-Warning--empty month in zou2010discovering
-8 is an integer literal, not a string, for entry zou2010discovering
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in zou2010discovering
-ptr=1, stack=
-{\em Proceedings of the 16th ACM SIGKDD international conference on Knowledge discovery and data mining}, 
----the literal stack isn't empty for entry zou2010discovering
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry li2012mining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry li2012mining
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2010finding
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2010finding
-while executing---line 1153 of file paper.bst
-Warning--empty address in zou2010finding
-Warning--empty month in zou2010finding
-8 is an integer literal, not a string, for entry zou2010finding
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in zou2010finding
-ptr=1, stack=
-{\em Data Engineering (ICDE), 2010 IEEE 26th International Conference on}, 
----the literal stack isn't empty for entry zou2010finding
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2013largetopk
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2013largetopk
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry andersen2006local
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry andersen2006local
-while executing---line 1153 of file paper.bst
-Warning--empty address in andersen2006local
-Warning--empty month in andersen2006local
-8 is an integer literal, not a string, for entry andersen2006local
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in andersen2006local
-ptr=1, stack=
-{\em Foundations of Computer Science, 2006. FOCS'06. 47th Annual IEEE Symposium on}, 
----the literal stack isn't empty for entry andersen2006local
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry abou2006multilevel
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry abou2006multilevel
-while executing---line 1153 of file paper.bst
-Warning--empty address in abou2006multilevel
-Warning--empty month in abou2006multilevel
-6 is an integer literal, not a string, for entry abou2006multilevel
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in abou2006multilevel
-ptr=1, stack=
-{\em Parallel and Distributed Processing Symposium, 2006. IPDPS 2006. 20th International}, 
----the literal stack isn't empty for entry abou2006multilevel
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry xu2007scan
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry xu2007scan
-while executing---line 1153 of file paper.bst
-Warning--empty address in xu2007scan
-Warning--empty month in xu2007scan
-8 is an integer literal, not a string, for entry xu2007scan
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in xu2007scan
-ptr=1, stack=
-{\em Proceedings of the 13th ACM SIGKDD international conference on Knowledge discovery and data mining}, 
----the literal stack isn't empty for entry xu2007scan
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry macropol2010scalable
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry macropol2010scalable
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry cheng2011clustering
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry cheng2011clustering
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zhang2011knn
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zhang2011knn
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zhang2011knn2
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zhang2011knn2
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry potamias2010k
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry potamias2010k
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry ljh2013cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry ljh2013cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry dr2012cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry dr2012cluster
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry jeh2002simrank
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry jeh2002simrank
-while executing---line 1153 of file paper.bst
-Warning--empty address in jeh2002simrank
-Warning--empty month in jeh2002simrank
-8 is an integer literal, not a string, for entry jeh2002simrank
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in jeh2002simrank
-ptr=1, stack=
-{\em Proceedings of the eighth ACM SIGKDD international conference on Knowledge discovery and data mining}, 
----the literal stack isn't empty for entry jeh2002simrank
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry yuan2010efficiently
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry yuan2010efficiently
-while executing---line 1153 of file paper.bst
-Warning--empty address in yuan2010efficiently
-Warning--empty month in yuan2010efficiently
-8 is an integer literal, not a string, for entry yuan2010efficiently
-while executing---line 1153 of file paper.bst
-Warning--empty publisher in yuan2010efficiently
-ptr=1, stack=
-{\em Database Systems for Advanced Applications}, 
----the literal stack isn't empty for entry yuan2010efficiently
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zou2011top
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zou2011top
-while executing---line 1153 of file paper.bst
-6 is an integer literal, not a string, for entry zou2011top
-while executing---line 1153 of file paper.bst
-Warning--empty address in zou2011top
-ptr=1, stack=
-{\em Web Information System Engineering--WISE 2011}, 
----the literal stack isn't empty for entry zou2011top
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry lmp2012shortest
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry lmp2012shortest
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry cw2012maxflow
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry cw2012maxflow
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zbl2014maxflow
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zbl2014maxflow
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry tangreliability
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry tangreliability
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zhangsuo2009
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zhangsuo2009
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry liuqiang2011
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry liuqiang2011
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry zhanghj2011topk
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry zhanghj2011topk
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry kelly1957congruence
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry kelly1957congruence
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry chu1965shortest
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry chu1965shortest
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string or missing field, for entry gabow1986efficient
-while executing---line 1153 of file paper.bst
-1 is an integer literal, not a string, for entry gabow1986efficient
-while executing---line 1153 of file paper.bst
-(There were 168 error messages)
+-- BUPTThesis.bst version 0.2 (2009/01/25) by Yu Zhang.
+-- http://code.google.com/p/buptthesis/
+-- See the "userguide.pdf" manual for usage information.
+Too many commas in name 1 of "JENSEN LJ, KUHN M, STARK M, et al." for entry jensen2009string
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "CEOL A, ARYAMONTRI AC, LICATA L, et al." for entry ceol2009mint
+while executing---line 2538 of file paper.bst
+Warning--there's a publisher but no address in sohraby2007wireless
+Too many commas in name 1 of "Kempe D, Kleinberg J, Tardos, et al." for entry kempe2003maximizing
+while executing---line 2538 of file paper.bst
+Warning--The editor in kempe2003maximizing is missing.
+Warning--empty editor in kempe2003maximizing
+Too many commas in name 1 of "Guha R, Kumar R, Raghavan, et al." for entry guha2004propagation
+while executing---line 2538 of file paper.bst
+Warning--The editor in guha2004propagation is missing.
+Warning--empty editor in guha2004propagation
+Too many commas in name 1 of "BADER JS, CHAUDHURI A, ROTHBERG JM, et al." for entry bader2003gaining
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "ASTHANA S, KING OD, GIBBONS FD, et al." for entry asthana2004predicting
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "SUTHRAM S, SHLOMI T, RUPPIN E, et al." for entry suthram2006direct
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "JIANG R, TU Z, CHEN T, et al." for entry jiang2006network
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "GHOSH J, NGO HQ, YOON S, et al." for entry ghosh2007routing
+while executing---line 2538 of file paper.bst
+Warning--The editor in ghosh2007routing is missing.
+Warning--empty editor in ghosh2007routing
+Too many commas in name 1 of "LIU Y, HE Y, LI M, et al." for entry liu2013does
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "MURUGANATHAN SD, MA DCF, BHASIN RI, et al." for entry muruganathan2005centralized
+while executing---line 2538 of file paper.bst
+Warning--The editor in wang2006realistic is missing.
+Warning--empty editor in wang2006realistic
+Too many commas in name 1 of "Wei D, Jin Y, Vural S, et al." for entry wei2011energy
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "Zhao B, Wang J, Li M, et al." for entry zhao2014detecting
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "Yuan Y, Wang G, Chen L, et al." for entry yuan2013efficient
+while executing---line 2538 of file paper.bst
+Warning--The editor in jin2011discovering is missing.
+Warning--empty editor in jin2011discovering
+Warning--there's a publisher but no address in cook2006mining
+Warning--there's a publisher but no address in aggarwal2010managing
+Warning--The editor in borgelt2002mining is missing.
+Warning--empty editor in borgelt2002mining
+Warning--The editor in yan2002gspan is missing.
+Warning--empty editor in yan2002gspan
+Warning--The editor in kuramochi2001frequent is missing.
+Warning--empty editor in kuramochi2001frequent
+Too many commas in name 1 of "HUAN J, WANG W, PRINS J, et al." for entry huan2004spin
+while executing---line 2538 of file paper.bst
+Warning--The editor in huan2004spin is missing.
+Warning--empty editor in huan2004spin
+Too many commas in name 1 of "Koyut{\"u}rk M, Grama A, Szpankowski, et al." for entry koyuturk2004efficient
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "ZOU Z, LI J, GAO H, et al." for entry zou2009frequent
+while executing---line 2538 of file paper.bst
+Warning--The editor in zou2009frequent is missing.
+Warning--empty editor in zou2009frequent
+Too many commas in name 1 of "ZOU Z, LI J, GAO H, et al." for entry zou2010mining
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "Papapetrou O, Ioannou E, Skoutas, et al." for entry papapetrou2011efficient
+while executing---line 2538 of file paper.bst
+Warning--The editor in papapetrou2011efficient is missing.
+Warning--empty editor in papapetrou2011efficient
+Too many commas in name 1 of "Zou Z, Gao H, Li J, et al." for entry zou2010discovering
+while executing---line 2538 of file paper.bst
+Warning--The editor in zou2010discovering is missing.
+Warning--empty editor in zou2010discovering
+Too many commas in name 1 of "ZOU Z, LI J, GAO H, et al." for entry zou2010finding
+while executing---line 2538 of file paper.bst
+Warning--The editor in zou2010finding is missing.
+Warning--empty editor in zou2010finding
+Warning--The editor in andersen2006local is missing.
+Warning--empty editor in andersen2006local
+Warning--The editor in abou2006multilevel is missing.
+Warning--empty editor in abou2006multilevel
+Too many commas in name 1 of "Xu X, Yuruk N, Feng Z, et al." for entry xu2007scan
+while executing---line 2538 of file paper.bst
+Warning--The editor in xu2007scan is missing.
+Warning--empty editor in xu2007scan
+Too many commas in name 1 of "POTAMIAS M, BONCHI F, GIONIS A, et al." for entry potamias2010k
+while executing---line 2538 of file paper.bst
+Warning--there's a school but no address in dr2012cluster
+Warning--The editor in jeh2002simrank is missing.
+Warning--empty editor in jeh2002simrank
+Warning--The editor in yuan2010efficiently is missing.
+Warning--empty editor in yuan2010efficiently
+Too many commas in name 1 of "Zou L, Peng P, Zhao, D, et al." for entry zou2011top
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "Zou L, Peng P, Zhao, D, et al." for entry zou2011top
+while executing---line 2538 of file paper.bst
+`editor' is a missing field, not a string, for entry zou2011top
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "Zou L, Peng P, Zhao, D, et al." for entry zou2011top
+while executing---line 2538 of file paper.bst
+Too many commas in name 1 of "Zou L, Peng P, Zhao, D, et al." for entry zou2011top
+while executing---line 2538 of file paper.bst
+Warning--there's a publisher but no address in zou2011top
+Too many commas in name 1 of "Gabow H, Galil Z, Spencer T, et al." for entry gabow1986efficient
+while executing---line 2538 of file paper.bst
+
+Done.
+(There were 30 error messages)

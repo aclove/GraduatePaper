@@ -5,18 +5,19 @@
 #include <cstring>
 using namespace std;
 
-#define N 8
-#define M 20
+#define N 10000
+#define MINM 100000
+#define MAXM 1000000
 #define MAXVALUE 3
 bool visit[N+1][N+1];
 
 int main(){
     freopen("in.txt","w",stdout);
-    const int cas = 10;
     srand(time(0));
-    for(int cc = 1; cc <= cas; ++cc){
-        int n = rand() % N + 2;
-        int m = rand() % min(n*(n-1)/2,M) + 1;
+    for(int m = MINM; m <= MAXM; m += MINM){
+        //int n = rand() % N + 2;
+        //int m = rand() % min(n*(n-1)/2,M) + 1;
+        int n = N;
         memset(visit,false,sizeof(visit));
         printf("%d %d\n",n,m);
         for(int i = 1; i <= m; i++){

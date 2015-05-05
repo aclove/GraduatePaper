@@ -5,7 +5,6 @@
 \chapter{不确定图中最小生成树的可靠性研究}
 \vskip 0.3cm
 
-\section{问题定义}
 在经典的传感器网络中，
 需要在监测区域布置大量的传感器，
 而每个传感器的能量是有限的，
@@ -23,6 +22,8 @@
 将其定义为满足以下条件的蕴含图的概率总和：
 这些蕴含图的最小生成树也是不确定图中主蕴含图的最小生成树，
 其中主蕴含图为不确定图中的所有边都出现的蕴含图。
+
+\section{问题定义}
 
 \begin{definition}[主蕴含图]
 \label{def:4.1.1}
@@ -44,7 +45,7 @@ $T^{G}_M$\\
 \begin{definition}[不确定图中最小生成树的可靠性]
 \label{def:4.1.3}
 设不确定图$\mathcal{G}=(V,E,W,P)$，
-令$SR=\{G|G \in Imp(\mathcal{G}) \land W^{G}_M = W^{\mathcal{G}}_M\}$为
+若令$SR=\{G|G \in Imp(\mathcal{G}) \land W^{G}_M = W^{\mathcal{G}}_M\}$为
 不确定图$\mathcal{G}$中所有可靠蕴含图的集合，
 则我们定义不确定图$\mathcal{G}$中最小生成树的可靠性为：
 \begin{equation}
@@ -263,6 +264,7 @@ $m$为不确定图中的边数。
 即算法$\,\ref{alg:rmst}$中的函数$\Call{RMST}{}$。
 然后，分别在不同的图结构中对两个算法进行分析。
 
+\setcounter{experiment}{0}
 \begin{experiment}
 \label{ex:4.1}
 由定理$\,\ref{trm:4.2.2}$可知算法的时间复杂度与最小生成树的数目相关，

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cmath>
+#include <ctime>
 #include "UGraph.h"
 #include "DisJointSet.h"
 using namespace std;
@@ -58,12 +59,16 @@ int main(){
     freopen("in.txt","r",stdin);
     freopen("out.txt","w",stdout);
     while(InitAndInput()){
+        clock_t start = clock();
         if(graph.GetMSTValue() == -1){
-            printf("MST of the main subgraph not exist!\n");
+            //printf("MST of the main subgraph not exist!\n");
             continue;
         }
-        else printf("MSTValue of the main subgraph is %d\n",graph.GetMSTValue());
-        printf("The probability of the OptimalMST is %f\n",SolveMethod());
+        //else printf("MSTValue of the main subgraph is %d\n",graph.GetMSTValue());
+        //printf("The probability of the OptimalMST is %f\n",SolveMethod());
+        SolveMethod();
+        clock_t end = clock();
+        printf("%d %d %.6f\n",graph.GetVertexNum(), graph.GetEdgeNum(),(end-start)*1.0/CLOCKS_PER_SEC);
     }
     return 0;
 }

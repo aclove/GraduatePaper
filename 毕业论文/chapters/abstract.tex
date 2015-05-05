@@ -8,10 +8,10 @@
 \addcontentsline{toc}{chapter}{摘要}
 \songti\zihao{-4}
 
-图论作为数学的一个分支，
+图论作为数学的一个重要分支，
 在计算机科学中也扮演着非常重要的角色。
-许多问题都可以通过抽象化之后转化为图论问题，
-然后通过计算机将对应的图论算法实现来得到问题的解。
+%许多问题都可以通过抽象化之后转化为图论问题，
+%然后通过计算机将对应的图论算法实现来得到问题的解。
 随着大数据时代的到来，
 图数据的规模也随之增大，
 因此图算法的效率对于解决图论问题至关重要。
@@ -21,20 +21,26 @@
 最终导致实际数据存在不确定性。
 因此不确定图已经成为一个非常热门的研究领域。
 本文对不确定图中的生成树算法进行了研究，
-主要内容分为以下四个部分：
+主要获得了如下成果：
 \begin{enumerate}[(1)]
 \item 由于不确定图的边存在不确定性，
 所以传统的最小生成树定义已经不能完全适用于不确定图。
 因此提出了最优生成树的概念，
 它主要是在最小生成树定义的基础上增加了对概率的最优化定义。
-然后我们借助贪心的思想设计了不确定图中最优生成树求解算法。
-\item 为了能够找到不确定图中前K个最优的最小生成树，
+然后我们借助贪心的思想设计了不确定图中最优生成树算法。
+\item 为了能够找到不确定图中的所有关键边，
 我们设计了Top-K最小生成树算法，
 并提出了基于并查集的优化算法和基于启发式搜索的优化算法。
 当$K$值较小时，基于启发式搜索的优化算法具有明显的优势。
-之后，我们又对最小生成树在不确定图中的可靠性进行了分析。
+\item 对最小生成树在不确定图中的可靠性进行了分析。
+将可靠性定义为所有包含最小生成树的蕴含图的存在概率之和，
+主要使用了边集划分的方法将所有蕴含图进行归类，
+在同一类中的蕴含图具有相同的最小生成树，
+通过求同一类中所有蕴含图存在的概率来获得不确定图的可靠性。
+
 \item 针对不确定有向图，给出了最优树形图的定义，
-并以朱刘算法为基础，设计了最优树形图算法。
+%并以朱刘算法为基础，
+设计了最优树形图算法。
 最后将TOP-K最小生成树算法的思想和最优树形图的性质相结合设计了TOP-K最小树形图查询算法。
 
 \end{enumerate}
@@ -53,8 +59,8 @@
 \setlength{\baselineskip}{19pt plus2pt minus1pt} % 调整自然行距
 
 Graph theory that is a branch of mathematics plays an important role in computer science.
-Many problems can be transformed into graph model,
-we can obtain the solution of the problem using graph algorithms by computer.
+%Many problems can be transformed into graph model,
+%we can obtain the solution of the problem using graph algorithms by computer.
 With the time for the era of big data,
 the scale of graph data will be more and more,
 so the efficiency of graph algorithms is very important to solve graph problems.
@@ -76,8 +82,15 @@ we designed the top-k minimum spanning tree algorithm
 and proposed two optimized algorithms based on disjoint-set and heuristic search respectively.
 When the K value is small, the algorithm based on heuristic search is better than the algorithm based on disjoint-set.
 At last, we analyze the reliability of the minimum spanning tree on uncertain graph.
+\item We analyze the reliability of the minimum spanning tree on uncertain graph.
+The reliability is defined as the sum of existence probability of implicated graphs that contain the minimum spanning tree,
+after that, we classify all implicated graph based on edge partition,
+the implicated graphs in the same class have the same MST.
+At last, we get the reliability of the uncertain graph through calculating the existence probability of implicated graphs that have the same class.
+
 \item In uncertain graph, we put forward the definition of the optimal arborescence,
-and design an optimal arborescence algorithm based on Liu-Zhu algorithm.
+and design an optimal arborescence algorithm.
+%based on Liu-Zhu algorithm.
 At last, we combine with the idea of the top-k minimum spanning tree algorithm and the property of the optimal arborescence and design top-k minimum arborescence query algorithm.
 \end{enumerate}
 

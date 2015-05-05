@@ -15,6 +15,7 @@
 \usepackage{color,xcolor}                                                                   % 支持彩色
 \usepackage{algorithm}
 \usepackage{enumerate}
+\usepackage{times}
 \usepackage[noend]{algpseudocode}
 %\usepackage[CJKbookmarks=true,hyperindex=true,
 %            bookmarksnumbered=false, bookmarksopen=true,
@@ -104,6 +105,7 @@
 \vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}\rule{\columnwidth}{0.4pt}%
 }
 
+\newenvironment{myreference}{\fontsize{10.5pt}{\baselineskip}\selectfont \setlength{\baselineskip}{13pt} \setlength{\bibsep}{3pt}}{} %自定义参考文献格式
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}          %引用文献索引在右上方显示
 
 
